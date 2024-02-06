@@ -19,7 +19,14 @@ Hoone projekteerimise faasis peavad ehitusfüüsikaga arvestama arhitektid, kons
 materjalide koosmõju konstruktsiooni toimimises. Ehituse faasis peab ehitusfüüsikaga arvestama ehitusjuhid - kuigi ehitatakse tavaliselt projekti järgi, paraku peab ehituses ka operatiivselt
 võtta otsuseid jooksvatest muudatustest. Ja viimaseks peavad ehitusfüüsikaga arvestama ka hoone haldamisega tegelevad inimesed. 
 
-Probleemi teine külg on ehitusvaldkonna väga madal digitaliseerumise tase (ja konservatiivsus tervikuna).
+Probleemi teine külg on ehitusvaldkonna väga madal digitaliseerumise tase (ja konservatiivsus tervikuna). Viimastel aastatel on arendatud väga palju profesionaalseid tarkvarasid
+projekteerimise ja ehitusjuhtimise tarbeks, kuid ehitusfüüsika valdkonna tarkvara arendused on olnud väga tagasihoidlikud. Turul on olemas mõned üksikud tooted, kuid need on liiga 
+keerulised ja väga ebamugava kasutajaliidesega - sellise tarkvara sihtgrupp on teadusvaldkond. Ehitusinseneride töö hõlmab väga palju erinevaid asju ning on tavaliselt ajaliselt väga
+piiratud, mistõttu keerulise kasutajaliidesega ja tööpõhimõttega tarkvara kasutamine ei ole parim variant. 
+
+Käesoleva töö eesmärk on välja töötada lahendust, mis võimaldaks teostada erinevaid ehitusfüüsikaga seotud analüüse mugavalt ja operatiivselt. See võiks parandada olukorda,
+kus ehitusfüüsika probleemide lahendamine jääb üldse erinevatel etapidel tegemata tarkvara või tarkvara kasutamise oskuste tõttu.
+
 
 
 \begin{enumerate}
@@ -29,47 +36,3 @@ Probleemi teine külg on ehitusvaldkonna väga madal digitaliseerumise tase (ja 
     \item Kes peab ehitusfüüsikaga tegelema?
     \item Millised väljakutsed on viimasel ajal tekkinud ehitusfüüsika seisukohalt?
 \end{enumerate}
-
-The \textit{Bibliography}, \textit{List of Figures} and \textit{List of Tables} are all automatically generated and references will be updated automatically as well. This means that if you've defined a citation but are not referencing it, it will not appear in the \textit{Bibliography}. This also means that any Figure / Table / Citations numbers are automatically updated as well. Numbering is done by order-of-appearance.
-
-One can create an itemized list:
-\begin{itemize}
-    \item item a
-    \item item b
-    \item ...
-\end{itemize}
-
-Some basic ways to manipulate text are \textit{italics} and \textbf{bold}. One can reference Figures (see Figure \ref{fig:taltech} for an example) as well as cite references which are defined in the \textit{references.bib} file.\cite{spectre,example-reference} 
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=.5\textwidth]{figures/taltech.jpg}
-    \caption{\textit{An image of the TalTech logo.}}
-    \label{fig:taltech}
-\end{figure}
-
-
-A table with three columns can be seen in Table \ref{tab:requirements}.
-\begin{longtable}{|p{0,5cm}|p{10cm}|p{3cm}|}
-	\caption{\it{A table with some requirements}}
-	\label{tab:requirements}\\ \hline
-	\textbf{Nr} &  \textbf{Requirement} & \textbf{Weight}  \\
-	\hline
-	\endfirsthead
-	\multicolumn{3}{l}%
-	{\tablename\ \thetable\ -- \textit{Continues...}} \\
-	\hline
-	\textbf{Nr} &  \textbf{Requirement} & \textbf{Importance}  \\
-	\hline
-	\endhead
-	\hline \multicolumn{3}{l}{\textit{Continues...}} \\
-	\endfoot
-	\hline
-	\endlastfoot
-1 & Price & High\\ \hline
-2 & Variety& Middle\\ \hline
-3 & Support& Low\\ \hline
-
-\end{longtable}
-
-We can use variables set in the \textit{main.tex} file to render values like our title (\doctitleEst) or supervisor names (\textbf{Supervisor}: \supervisor, \textbf{Co-supervisor}: \cosupervisor{}).
