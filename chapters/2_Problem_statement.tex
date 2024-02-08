@@ -11,7 +11,7 @@ ainult järgmistele, kuna need on kõige rohkem kasutatud nii raamatutes, kui ka
 \begin{figure}[ht]
     \centering
     \includegraphics[width=.6\textwidth]{figures/problem_statement/07_layered_structure_sample.png}
-    \caption{\textit{Kihilise konstruktsiooni näide}}
+    \caption[Mitmest kihist koosneva ehituskonstruktsiooni näide]{\textit{Kihilise konstruktsiooni näide}}
     \label{fig:construction_sample}
 \end{figure}
 
@@ -43,7 +43,7 @@ aega ja ka soodustab vea tegemist. Pildil \ref{fig:excel_table_sample} on toodud
 \begin{figure}[ht]
     \centering
     \includegraphics[width=.8\textwidth]{figures/problem_statement/04_calc_table.png}
-    \caption{\textit{Arvutustabeli näide}}
+    \caption[Näide niiskustehnilise analüüsi tulemuste esitamisest tabelis]{\textit{Arvutustabeli näide}}
     \label{fig:excel_table_sample}
 \end{figure}
 
@@ -54,7 +54,7 @@ osarõhu väärtused vastavas punktis -- näide on todud pildil  \ref{fig:excel_
 \begin{figure}[ht]
     \centering
     \includegraphics[width=.8\textwidth]{figures/problem_statement/05_excel_grafic_sample.png}
-    \caption{\textit{Näide tulemuste esitamisest graafikul}}
+    \caption[Näide niiskustehnilise analüüsi tulemuste esitamisest graafikul]{\textit{Näide tulemuste esitamisest graafikul}}
     \label{fig:excel_graph_sample}
 \end{figure}
 
@@ -65,52 +65,74 @@ need jooned ristuvad on suhteline niiskus 100\%, mis tähendab kondensaadi tekki
 Näide on toodud pildil \ref{fig:excel_graph_sample}: vasakul on niiskustehniline olukord hea, kuna aurutõke asub õiges kohas, ning paremal
 paiknem konstruktsiooni külmemal pool veeaurupidav kiht, mistõttu läheb osarõhk kõrgeks ja ületab küllastusrõhu väärtust.
 
-
-Kuigi probleem on üldiselt lahendatav näiteks \textit{Microsoft Excel} vahenditega, paraku pole see kõige mugavam viis
-mitmel põhjustel:
-\begin{itemize}
-    \item selline lähenemine vajab palju käsitööd kihtide lisamiseks või ümber paigutamiseks, mis on analüüsi lahutamata osa -- proovitakse erinevaid materjale erinevates konstruktsiooni kohtades
-    \item materjalide omadusi omadusi on siiski vaja leida ja TODO !
-\end{itemize}
-
-
-Kohalikul turul puudub tarkvara, millega oleks mugav teostada konstruktsiooni
-niiskustehnilise toimivuse analüüsi. Niiskustenilise toimivuse analüüs on klassikaline ehitusfüüsika ülesanne, mille 
-eesmärk on hinnata veeauru kondenseerumise (või ka kõrgest niiskusest põhjustatud kahjustuste tekkimise) riski.
-
-
+Kuigi probleem on üldjoontes lahendatav näiteks \textit{Microsoft Excel} vahenditega, paraku pole see kõige mugavam viis
+mitmel põhjusel. Selline lähenemine vajab palju käsitööd kihtide lisamiseks või ümber paigutamiseks, mis on analüüsi lahutamata
+osa -- proovitakse erinevaid materjale erinevates konstruktsiooni kohtades. Samuti materjalide andmeid on siiski vaja otsida 
+ning hallata nende aktuaalsust ja usaldusväärsust -- aeganõudev töö, mida võiks elimineerida kasutades valmistoodet.
 
 
 \section{Olemasolevad lahendused ja turu analüüs}
-Üks populaarsematest analoogidest, mida kasutatakse sealhulgas ka Eestis, on Saksa päritoluga tarkvara \textbf{Ubakus}. 
-Tegemist on veebirakenduse kujul kommertstarkvaraga, mille \textit{demo}-versioon on saadaval tasuta (pilt \ref{fig:ubakus_sample}). 
+Üks populaarsematest analoogsetest lahendustest, mis on inseneridel kasutusel Euroopas, sealhulgas ka Eestis, on Saksa päritoluga tarkvara \textbf{Ubakus}. 
+Tegemist on kommertstarkvaraga, mis töötab veebirkenduse kujul. Tarvara \textit{demo}-versioon on saadaval tasuta.
 \begin{figure}[ht]
     \centering
     \includegraphics[width=.8\textwidth]{figures/problem_statement/01_ubakus.png}
-    \caption{\textit{Ubakus veebirakenduse ekraanitõmmis.}}
+    \caption[Ubakus tarkvara katutajaliides, ekraanitõmmis]{\textit{Ubakus: kasutajaliides, ekraanitõmmis.}}
     \label{fig:ubakus_sample}
 \end{figure}
 
 \textbf{Ubakus} võimaldab teostada konstruktsiooni niiskustehnilist analüüsi. Kasutajaliides võidaldab 
 mudeldada mitmest kihist koosneva konstruktsiooni, valides igale kihile paksust ja materjali, millest 
 kiht koosneb. Tugev eelis on see, et tarkvaraga saab analüüsida ka mittehomogeensete (mitemest erinevast 
-materjalist, nt puitsõrestiksein) kihtidega konstruktsioone - pilt \ref{fig:ubakus_layers}
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=.6\textwidth]{figures/problem_statement/02_ubakus_layers.png}
-    \caption{\textit{Ubakus: konstruktsiooni kihtide lisamine.}}
-    \label{fig:ubakus_layers}
-\end{figure}
+materjalist, nt puitsõrestiksein) kihtidega konstruktsioone -- pilt \ref{fig:ubakus_sample}
 
 Ehitusmaterjalide valik, mida on võimalik konstruktsiooni mudeldamisel kasutada, on piisavalt lai 
 (aga tasuta versioonis piiratud). Tasulises versioonis on samuti võimalik ka oma materjalide 
-lisamine ja kasutamine. Puuduseks on see, et teatud osa baasis olevatest ehitusmaterjalidest on Saksamaal
-turustatavad materjalid, mistõttu selle tarkvara kasutades Eestis peab kas sisestama kõik vajalikud 
-materjalid käsitsi, või kasutada Saksa analoogid ning arvestada sellest tulenevaarvutuste ebatäpsusega.
+lisamine ja kasutamine. Osa materjalidest on abstraktsed (näiteks: betoon, puit, mineraalvill), osa
+on reaalsed turustatavad tooted (näiteks: Isover soojusisolatsioonide valik) -- pilt \ref{fig:ubakus_materials}. Võib puuduseks pidada
+seda, et osa materjale (konkreetsed toted) on Saksamaal ja Kesk-Euroopas turustatavad materjalid, mistõttu selle 
+tarkvara kasutades Eestis peab kas sisestama vajalikud kohalikud materjalid käsitsi, või arvestada Saksa analoogide
+kasutusest tuleneva arvutuste ebatäpsusega.
 \begin{figure}[ht]
     \centering
     \includegraphics[width=.6\textwidth]{figures/problem_statement/03_ubakus_materials.png}
-    \caption{\textit{Ubakus: ehitusmaterjalide valik baasis.}}
+    \caption[Ubakus tarkvara materjalide valik, ekraanitõmmis]{\textit{Ubakus: ehitusmaterjalide valik baasis, ekraanitõmmis.}}
     \label{fig:ubakus_materials}
 \end{figure}
+
+Keskkonnatingimused valitakse manuaalselt sisestades õhutemperatuuri ja -niiskuse väärtused. Rakendus võimaldab arvutuste tulemust
+vaadata erineval viisil, alates lihtsamast 3D visualiseeringust kuni värvilise temperatuurikaardini. Tarkavara saab osa aastase 
+tellimusega, mille maksumus on alates 50 kuni 120 eurot sõltuvalt valitud paketist. Objektiivselt vaadates on tarkvara hea nii
+funktsionaalsuse kui ka hinna seisukohalt. Lisaks sellele on ka kasutajaliides piisavalt mugav ja intuitiivselt arusaadav,
+et seda saaks kasutada ka inimene, kellel puuduvad sügavad teadmised valdkonnast. Nagu varem oli mainitud, 
+takvara on suunatud eelkõige Kesk-Euroopa ja Canada turgudele, Balti ja Skandinaavia riigidele lokaliseerimine puudub. Kokkuvõttes
+antud lahendust võib kindlasti võtta arvesse toote funktsionaalsuse kavandamisel.
+
+\textbf{Physibel Glasta} on üks analoogne lahendus veel, mis on samuti kommertstarkvara. Tegemist on samuti arvutile paigaldatava tarkvaraga, mille
+kasutajaliides on veidi keerulisem ja ka disain on oluliselt konservatiivsem (pilt \ref{fig:glasta_sample}). 
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=.6\textwidth]{figures/problem_statement/09_glasta_sample.png}
+    \caption[Physibel Glasta kasutajaliides, ekraanitõmmis]{\textit{Glasta: kasutajaliides, ekraanitõmmis.}}
+    \label{fig:glasta_sample}
+\end{figure}
+
+Selle tarkvara funktsionaalsuse tugev eelis on võimalus teostada analüüsi aasta lõikes - väga tihti 
+kondenseerumise probleem esineb vaid teatud perioodil (tavaliselt külmal hooajal),
+ülejäänud ajal toimub kuivamine. See, et ühel või kahel talvisel kuul esineb konstruktsioonis kondenseerumise oht ei pruugi
+olla probleemiks, kui ülejäänud ajal jõuab konstruktsioon täielikult kuivada. Antud asjaolu Glasta tarkvara analüüsib ning 
+tulemust esitatakse ka graafikul (pilt \ref{fig:glasta_results}). Antud funktsionaalsus on äärmiselt oluline ja selle vajadusega peab toote 
+planeerimisel arvestama. Tarkvara hind on suurusjärgus 500 eurot aastas, mis on päris kõrge, ning lisaks ka alla laadimise ja 
+paigaldamise vajadus teeb antud lahendust ebamugavaks ja paljudel juhtudel ebaotstarbekaks.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=.6\textwidth]{figures/problem_statement/10_glasta_results.png}
+    \caption[Physibel Glasta tulemuste esitamine diagrammil, ekraanitõmmis]{\textit{Glasta: tulemuste esineamine diagrammil, ekraanitõmmis.}}
+    \label{fig:glasta_results}
+\end{figure}
+
+Valdkonnas on olemas ka oma lipulaev -- \textbf{Delphin} on professionaalne tarkvara, mille hind on suurusjärgus 1000-1500 eurot aastas.
+Eelisteks on väga lai funktsionaalsus ning ka täielik vabadus konstruktsiooni ja keskkonna mudeldamisel. Viimane on ühtlasi ka puuduseks,
+sest kliimatingimuste mudeldamine eeldab ilmatingimuste (sealhulgas ka andmed päikesekiirgusest, sademetest) andmebaasi olemasolu.
+Samuti vajab tarkvara ka kasutaja koolitust, mida tootja pakub ka pakub hinnaga 800 eurot. Eeltoodud asjaolud teevad antud tarkvara 
+sobilikuks ja otstarbekaks vaid nendele, kellel ehitusfüüsika arvutused on põhitegevuseks.
