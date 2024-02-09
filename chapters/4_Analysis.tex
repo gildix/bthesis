@@ -5,7 +5,6 @@ funktsionaalsed ja mittefunktsionaalsed tingimused. Selle alusel kirjeldada
 kasutajalood või siis teha tegevuse plokkskeem. Leida töövahendid
 põhjendatult: milliste kriteeriumite alusel tuleb valik teha, milline lahendus
 valitakse selle töö puhul, kindlasti põhjendada.
-
 Analüüs peab sisaldama vastuseid küsimustele:
 \begin{enumerate}
     \item visiooni kirjeldust ja skoobi määramist põhjendusega
@@ -15,28 +14,30 @@ Analüüs peab sisaldama vastuseid küsimustele:
 \end{enumerate}
 
 
+
 \section{Nõuete defineerimine}
-Süsteemi kasutajana tahan
+Nõuete määramisel lähtutakse erinevate osapoolte vajadusest - süsteemi kasutaja (klient) ja süsteemi administraator (tooteomanik).
+
+
+\textbf{Süsteemi kasutajana tahan:}
 \begin{itemize}
     \item registreerida endale konto ja logida sisse
     \item logida sisse
-    \item vaadata enda profiili
-    \item muuta oma konto andmeid
-    
-    \item vaadata enda poolt salvestatud materjalid
-    \item salvestada uus materjal
-    \item lisada materjali parameetrid
+    \item hallata oma konto andmeid
+    \item tellida tasulist paketi
+    \item vaadata enda poolt salvestatud materjalide nimekirja
+    \item luua ja salvestada uus materjal
     \item redigeerida varem salvestatud materjal
     \item kustutada varem salvestatud materjal
-    \item lisada uut kihti konstruktsiooni mudelisse
+    \item lisada uus kiht konstruktsiooni mudelisse
     \item valida uue kihi materjal
     \item sisestada uue kihi paksuse väärtust
-
     \item redigeerida olemasolevat kihti
     \item kustutada olemasolevat kihti
     \item vahetada kihtide järjekorda
-    \item valida välistingimuste seadistust
-    \item valida sisetingimuste seadistust
+    \item valida välistingimuste parameetrid
+    \item valida sisetingimuste parameetrid
+    \item valida konstruktsiooni tüüp
     \item vaadata tulemusi tabeli kujul (valikuliselt)
     \item vaadata tulemusi graafikul (valikuliselt)
     \item vaadata konstruktsiooni toimivuse mõõdikuid
@@ -47,31 +48,52 @@ Süsteemi kasutajana tahan
     \item vaadata salvestatud konstruktsioonid
     \item kustutada salvestatud konstruktsioonid
     \item avada salvestatud konstruktsioonid kalkulaatoris
-
     \item muuta kiht mittehomogeenseks
     \item mittehomogeensele kihile lisada alamkihid
     \item valida alamkihtide materjalid
     \item sisestada alamkihtide paksuse väärtust
+    \item näha konstruktsiooni skemaatilist joonist
     \item näha skemaatilise joonise peal graafikut
     \item näha skemaatilise joonise peal värvilist temperatuurikaarti
-    \item näha kondensaadi tekkimise tõenäosuse graafikut teatud punkis aasta lõikes
-    \item valida kliimaandmeid aasta lõikes analüüsi jaoks
+    \item näha dünaamilist analüüsi aasta lõikes
+    \item valida kliimaandmeid dünaamilise analüüsi jaoks
+    \item genereerida analüüsi aruanne PDF formaadis
 \end{itemize}
 
-Infosüsteemi administraatorina soovin
+Kliendipoolsed kasutajalood on 
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=1\textwidth]{figures/analysis/client_userstories.png}
+    \caption[Funktsionaalsed nõuded, kliendi kasutajalood]{\textit{Kliendi kasutajalood}}
+    \label{fig:client_userstories}
+\end{figure}
+
+\textbf{Infosüsteemi administraatorina soovin:}
 \begin{itemize}
-    \item vaadata süsteemis salvestatud materjalid
+
+    \item vaadata kasutajate nimekirja
+    \item hallata kasutajaid
+    \item seadistada tellimust vormistanud kasutajale vastavad õigused
+    \item hallata kasutajate andmeid
+    \item vaadata süsteemis salvestatud vaikimisi materjalide nimekirja
     \item salvestada uus materjal
-    \item lisada materjali parameetrid
     \item määrata materjali ligipääsu taset
     \item redigeerida varem salvestatud materjal
     \item kustutada varem salvestatud materjal
-    \item lisada uut kihti konstruktsiooni mudelisse
-    \item valida uue kihi materjal
-    \item sisestada uue kihi paksuse väärtust
-    \item sisestada keskkonna seadistuse valikuid
+    \item hallata uusi materjali kategooriaid
+    \item hallata uusi materjalide tootjaid
+    \item hallata keskkonna seadistuse valikuid
+    \item lisada kliimaandmeid failina
 \end{itemize}
 
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/analysis/admin_userstories.png}
+    \caption[Funktsionaalsed nõuded, administraatori kasutajalood]{\textit{administraatori kasutajalood}}
+    \label{fig:admin_userstories}
+\end{figure}
 
 
 \section{Tehnoloogiate ja meetodite valik}
