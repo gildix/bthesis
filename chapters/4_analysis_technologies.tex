@@ -153,3 +153,20 @@ Django  & + & + & + & -  \\ \hline
 Kõik raamistikud omavad vajalikku funktsionaalsust arendatava infosüsteemi ehitamiseks, seetõttu valiku tegemist 
 lähtutakse saadaval oleva programmeerimisressurssi oskuste tasemest erinevate raamistikutega. Sellest lähtuvalt
 oli tehnoloogiaks valitud C\# keeles kirjutatud .NET raamistik.
+
+\subsection{Andmebaasi juhtsüsteem}
+Kuna inosüsteemi äriloogika ei eelda suurte andmete mahtude säilimist, seetõttu ka andmebaasi juhtsüsteemi 
+valiku osas on nõuded tagasihoidlikud: \textit{Open Source} tüüpi litsents, et välistada lisakulusid ning
+võimalus ühendada andmebaasimootor valitud serveriosa raamistikuga (.NET). Kõige populaarsemad 
+\textit{Open Source} litsentsiga andmebaasimootorid on:
+\begin{itemize}
+    \item MySQL
+    \item PostgreSQL
+    \item MariaDB
+    \item MongoDB
+    \item SQLite
+\end{itemize}
+Kõikidele ülaltoodud süsteemidele eksisteerivad juhtprogrammid .NET EFCore ühendamiseks, seetõttu võib kõik
+toodud lahendused pidada sobilikuks. Valikul lähtutakse sellest, mis tehnoloogiaga on programmerijal rohkem teadmisi 
+ja kogemusi. Antud juhul see on PostgreSQL. 
+
