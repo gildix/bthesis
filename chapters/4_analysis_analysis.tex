@@ -1,7 +1,8 @@
 \section{Nõuete defineerimine}
-Nõuete määramisel lähtutakse erinevate osapoolte vajadusest - süsteemi kasutaja (klient) ja süsteemi administraator (tooteomanik).
-
-
+\subsection{Funktsionaalsed nõuded}
+\label{subsec_func_req}
+Funktsionaalsete nõuete määramisel lähtutakse erinevate osapoolte vajadusest - süsteemi kasutaja ja süsteemi 
+administraator.
 \textbf{Süsteemi kasutajana tahan:}
 \begin{itemize}
     \item registreerida endale konto ja logida sisse
@@ -102,3 +103,14 @@ see oleks võimalik implementeerida ilma suurte muutusteta , kuid arvutuste ja k
     \caption[Funktsionaalsed nõuded, administraatori kasutajalood]{\textit{administraatori kasutajalood}}
     \label{fig:admin_userstories}
 \end{figure}
+
+\subsection{Mittefunktsionaalsed nõuded}
+Lisaks osas \ref{subsec_func_req} kirjeldatud funktsionaalsetele nõuetele, peab süsteem vastama järgmistele nõuetele:
+\begin{itemize}
+    \item kasutajaliides peab olema kiire -- kasutaja peab nägema arvutuse tulemuste uuendamist kohe peale 
+lähteandmete (kihid, parameetrid) muutmist, pikk ooteaeg või lehe ümberlaadimine tulemuste näitamiseks ei ole aktsepteeritav;
+    \item kasutajaliides peab olema kasutajasõbralik -- kasutaja peab intuitiivselt aru saama, mida ta peaks tegema, et 
+jõuda tulemuseni, vajadusel peab ta olema juhitud \textit{popup}-tüüpi infoplokidega;
+    \item kasutajaliides peab olema kaasaaegne, st välimus ja veebilehe struktuur peavad
+vastama kaasaaegsetele UX/UI printsiibidele.
+\end{itemize}
