@@ -26,12 +26,12 @@ teostatakse serveril ning kliendile saadetakse andmed, mis on vajalikud tulemust
 kasutajale. Iga uus tegevus kasutajaliideses, mis mõjutab tulemusi (uue kihi lisamine, 
 kihtide järjekorra muutmine, arvutuse parameetrite muutmine jms.), tähendab uut päringut serverile. 
 Samuti SPA tehnoloogia võimaldab muuta lehe sisu dünaamilisel viisil -- uuendatakse vaid lehe teatud
-komponent ilma kogu lehekülje ümberlaadimise vajaduseta. See on ka oluline, kuna tulemuste esitamist 
+komponent ilma kogu lehekülje ümberlaadimise vajaduseta \cite{about_spa}. See on ka oluline, kuna tulemuste esitamist 
 peab uuendama dünaamiliselt kohe peale arvutuse lähteandmete muutmist.
 
 Üheleherakenduste implementeerimiseks kasutatakse JavaScript programmeerimiskeelt veebilehe dünaamilise 
 loogika juhtimiseks. Soovitavalt kasutada JavaScript keele laiendust -- TypeScript, mis muudab JavaScript-i 
-tugevalt ja staatiliselt tüübitud keeleks. Lehtede struktuuri ehitamiseks kasutatakse HTML (või raamistikust
+tugevalt ja staatiliselt tüübitud keeleks \cite{about_typescript}. Lehtede struktuuri ehitamiseks kasutatakse HTML (või raamistikust
 sõltuv laiendatud HTML-i süntaks). Kujundust teostatakse CSS stiilireeglitega ja lihtsustamise mõttes
 võetakse kasutusele ka vastavad teegid nt Bootstrap.
 
@@ -39,7 +39,7 @@ Kuigi on võimalik implementeerida loogikat kasutades puhtat JavaScript koodi, t
 harva. On olemas erinevad lahendused, mis oluliselt lihtsustavad rakenduse ehitamise protsessi, kuid 
 nõuavad ka spetsiifilisi teadmisi. Raamistiku kasutuselevõtt olulisel määral vähendab koodi kirjutamist,
 kuna raamistik ise haldab loogikat, mis on seotud näiteks \textit{Routing}-uga, turvalisusega, komponentide
-genereerimise ja uuendamisega. Spetsiifiliste asjade jaoks kasutatakse eraldi pluginaid ja teeke. Näiteks
+genereerimise ja uuendamisega. Spetsiifilise funktsionaalsuse jaoks kasutatakse eraldi pluginaid ja teeke. Näiteks
 päringute saatmise ja serveri vastuse töötluseks kasutatakse \textit{Axios} -- teek, mida saab kasutada 
 erinevate raamistikutega.
 
