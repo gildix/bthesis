@@ -35,15 +35,51 @@ on vastavalt erinevad. \textit{Dashboard}-kaartide näide on toodud pildil \ref{
     \label{fig:desing_dashboard_cards}
 \end{figure}
 
-
-Kasutajaliideses kasutatakse kaks põhilist nuppude stiili - aktsepteerimise ja tühistamise nupud.
+Kõige keerulisem kasutajaliidese osa on kalkulaatori vaade. Vaade on jaotatud kolmeks loogiliseks osaks:
+arvutuse parameetrid, konstruktsiooni kihtide komplekteerimine ja tulemuste graafiline esitamine. 
+Kalkulaatori töövoog on esitatud Pildil \ref{fig:desing_workflow}.
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.4\textwidth]{figures/analysis/desing_buttons.png}
-    \caption[Nuppude disaini näide]{\textit{Nuppude disaini näide}}
-    \label{fig:design_buttons}
+    \includegraphics[width=1\textwidth]{figures/analysis/desing_workflow.png}
+    \caption[Arvutuse kasutaja töövoog]{\textit{Arvutuse kasutaja töövoog}}
+    \label{fig:desing_workflow}
 \end{figure}
 
+Parameetrite plokk on esimene, millega peab kasutaja tegelema 
+- valitakse arvutuse parameetrid: konstruktsiooni tüüp, väliskeskkond. Samuti valitakse, kas 
+sisekeskkonna parameetrid sisestatakse käsitsi või arvutatakse automaatselt välja kasutades 
+Eesti elamute sisekliima mudelit. Esimesel juhul kasutajale näidatakse väljad temperatuuri ja 
+niiskuse sisestamiseks, teisel juhul näidatakse valiklist sisekeskkonna profiilidega (EN ISO 13788 kohase
+klassifikatsiooni järgi).  Samuti selles plokis on esitatud ka arvutuse üldised arvulised tulemused -
+konstruktsiooni summaarne soojusjuhtivus (U-arv) ja veeaurutakistus. Parameetrite ploki disain
+on näidatud Pildil \ref{fig:design_calc_parameters}.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=1\textwidth]{figures/analysis/desing_calc_parameters.png}
+    \caption[Parameetrite ploki disain]{\textit{Parameetrite ploki disain}}
+    \label{fig:design_calc_parameters}
+\end{figure}
 
+Järgmine tegevus, mis peab olema tehtud tulemuste näitamiseks on konstruktsiooni mudeldamine, mis
+kujutab ennast erinevatest materjalidest ja erineva paksusega kihtidest nimekirja koostamist.
+Kasutaja lisab, muudab või kustutab nimekirjas olevad kihid. Uue kihi lisamiseks vajutab kasutaja
+vastavat nuppu, mille järel näidatakse uue kihi parameetrite vormi. Vormist peab kasutaja
+valima uue kihi materjal, paksust ning salvestada kiht. Kui uue kihi lisamine (või
+olemasoleva kihi redigeerimine) on algatatud, siis uue kihi lisamise nupp on deaktiveeritud, et
+suunata kasutajad tegeleda vaid ühe kihiga korraga. Lihtsa (ühest materjalist koosneva) kihi lisamise näide
+on toodud Pildil \ref{fig:design_simple_layer}.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=1\textwidth]{figures/analysis/desing_calc_simple_layer.png}
+    \caption[Ühest materjalist koosneva kihi lisamine]{\textit{Ühest materjalist koosneva kihi lisamine}}
+    \label{fig:design_simple_layer}
+\end{figure}
 
-
+Mitmest erinevast materjalist koosneva kihi lisamine eeldab keerulisemat töövoogu. 
+Mitmest materjalist koosneva kihi lisamise näide on toodud Pildil \ref{fig:design_simple_layer}.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=1\textwidth]{figures/analysis/desing_calc_multi_layer.png}
+    \caption[Mitmest materjalist koosneva kihi lisamine]{\textit{Mitmest materjalist koosneva kihi lisamine}}
+    \label{fig:design_multy_layer}
+\end{figure}
