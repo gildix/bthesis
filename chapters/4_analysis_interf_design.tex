@@ -75,11 +75,37 @@ on toodud Pildil \ref{fig:design_simple_layer}.
     \label{fig:design_simple_layer}
 \end{figure}
 
-Mitmest erinevast materjalist koosneva kihi lisamine eeldab keerulisemat töövoogu. 
-Mitmest materjalist koosneva kihi lisamise näide on toodud Pildil \ref{fig:design_simple_layer}.
+Mittehomogeense (mitmest erinevast materjalist koosneva) kihi lisamine eeldab keerulisemat töövoogu.
+Kasutaja kõigepealt peab määrama peakihi paksust (konstruktsiooniga põiki suunas), seejärel lisada 
+vajalikku arvu alamkihte ja määrama alamkihtide materjalid ja paksused. Alamkihi paksuseks loetakse 
+materjali paksust konstruktsiooniga piki suunas. Kui kõik andmed on valitud, siis uus kiht salvestatakse
+vastava nuppu vajutamisega. Mitmest materjalist koosneva kihi lisamise näide on toodud Pildil \ref{fig:design_simple_layer}.
 \begin{figure}[ht]
     \centering
     \includegraphics[width=1\textwidth]{figures/analysis/desing_calc_multi_layer.png}
     \caption[Mitmest materjalist koosneva kihi lisamine]{\textit{Mitmest materjalist koosneva kihi lisamine}}
     \label{fig:design_multy_layer}
 \end{figure}
+
+Tulemuste esitamiseks tehakse kalkulaatori lehele kaks plokki. Üks neist on mudeldatud konstruktsiooni skemaatiline joonis,
+mille peal on näidatud konstruktsiooni kihid paksuste väärtustega ja kasutatud materjaliga. Kihtide tausta värv määratakse
+sõltuvalt materjali tüübist (nt betoonid - hall, soojusisolatsioonid - kollane). Tulevikus joonise peale peab lisama 
+temperatuuri ja veeauruosarõhkude jaotuse graafikud, kuid prototüübi puhul antud koht on lihtsustatud ja graafikud
+on toodud eraldi plokis. Graafikute ehitamiseks kasutatakse valmislahendust, nt Javascript-i põhine teek Graph.js.
+Tulemuste plokide disain on näidatud piltidel \ref{fig:design_calc_drawing} ja \ref{fig:design_calc_graph}..
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=.8\textwidth]{figures/analysis/desing_calc_drawing.png}
+    \caption[Konstruktsiooni skemaatiline joonis]{\textit{Konstruktsiooni skemaatiline joonis}}
+    \label{fig:design_calc_drawing}
+\end{figure}
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=.8\textwidth]{figures/analysis/desing_calc_graph.png}
+    \caption[Tulemuste esitamine diagrammil]{\textit{Tulemuste esitamine diagrammil}}
+    \label{fig:design_calc_graph}
+\end{figure}
+
+Ülejäänud lehed -- ehitusmaterjalid, parameetrid, kasutajad -- kujutavad ennast võrdlemisi lihtsaid CRUD-tüüpi kasutajaliideseid, millistel
+keeruline loogika puudub. Kõikide lehtede disaini projektid on esitatud käesoleva töö \colorbox{BurntOrange}{Lisas X}.
