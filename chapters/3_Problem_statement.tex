@@ -1,12 +1,13 @@
 \section{Probleemi uurimine}
 \label{chapters:problem_statement_research}
+
 Ehitusfüüsika mõistes ehituskonstruktsioon kujutab endast erinevate füüsikaliste oma-dustega kihtidest 
-koosnevat struktuuri, mis eraldab kaks erinevat keskkonda (näiteks: hoone sees olev õhk ja õues olev õhk).
-Seejuures kõige olulisemad materjalide omadused on soojuserijuhtivus \begin{math}\lambda\end{math} [W/mK]
-ja veeaurutakistus, mis võib olla väljendatud mitmel viisil (neid viise on palju, aga käesolevas töös keskendutakse 
-ainult järgmistele, kuna need on kõige rohkem kasutatud nii raamatutes, kui ka materjalitootjate dokumentatsioonis):
-\begin{math}\mu\end{math} - diffusioonitakistustegur (materjali omadus), Sd[m] - suhteline diffusioonitakistus 
-(kindla paksusega toote omadus). 
+koosnevat struktuuri, mis eraldab kaks erinevat keskkonda (näiteks: hoone sees olev soe ja niiske õhk nig väljas olev külm ja kuiv õhk).
+Sellises olukorras kõige olulisemad materjalide omadused on soojuserijuhtivus \begin{math}\lambda\end{math} [W/mK]
+ja veeaurutakistus, mis võib olla väljendatud mitmel viisil (viise on palju, aga käesolevas töös keskendutakse 
+ainult ühele, kuna see on kõige enam kasutatud nii teadusallikates, kui ka ehitusmaterialide dokumentides):
+\begin{math}\mu\end{math} - diffusioonitakistustegur \cite{building_physics_abc}. Infosüsteemi andmemudeli projekteerimisel tuleb kohe arvesse võtma
+võimalust lisada tulevikus materjalile ka muud omadused, mis on tarvis teiste tööriistade arendamiseks.
 
 \begin{figure}[ht]
     \centering
@@ -15,14 +16,16 @@ ainult järgmistele, kuna need on kõige rohkem kasutatud nii raamatutes, kui ka
     \label{fig:construction_sample}
 \end{figure}
 
-Teatud tingimustel võib tekkida olukord, kui konstruktsiooni sees on mingis punktis suhteline niiskus
-nii kõrge, et soodustab bioloogiliste kahjustuste või isegi kondensaadi tekkimist. Nimetatud olukord on ohtlik
-nii ehituskonstruktsioonile, mis pikaajalise niiskuse mõjul lagunevad, kui ka inimese tervisele, sest konstruktsioonide
-sees olev hallitus on õhku sattuvate bakterite allikaks. Seda, kuidas konstruktsioon töötab soojus- ja niiskuse leviku
-seisukohalt nimetatakse konstruktsiooni niiskustehniliseks toimivuseks. Arvutust, mille eesmärgiks on hinnata 
-kondenseerumise riski konstruktsioonis, nimetatakse konstruktsiooni niiskustehnilise toimivuse analüüsiks.
+Teatud tingimustel võib tekkida olukord, kui konstruktsiooni ristlõikes on mingis punktis suhteline niiskus
+piisavalt kõrge, et soodustada kondensaadi tekkimist \cite{building_physics_abc}. Nimetatud olukord on ohtlik
+nii ehituskonstruktsioonile, mis võib pikaajalise niiskuse mõjul laguneda, kui ka inimese tervisele, sest konstruktsioonide
+sees tekkiv hallitus on siseruumide õhku sattuvate bakterite allikaks  \cite{building_physics_abc}. 
+Seda, kuidas konstruktsioonis toimuvad niiskuse leviku protsessid sõltuvalt materjalide omadustest ja 
+paiknemisest ning ümbritsevatest tingimustest, nimetatakse konstruktsiooni niiskustehniliseks toimivuseks. Arvutust,
+mille abil võib neid protsesse modelleerida ja kondenseerumise riski hinnata, nimetatakse niiskustehnilise toimivuse
+analüüsiks.
 
-Tegemist on klassikalise ehitusfüüsika ülesandega, mille lehandemiseks peab ette võtma järgmiseid samme:
+Tegemist on klassikalise ehitusfüüsika ülesandega, mille lehandemiseks peab ette võtma järgmiseid samme \cite{iso_13788}:
 \begin{itemize}
     \item konstruktsiooni kihtide soojustakistuse ja konstruktsiooni summaarse soojustakistuse arvtus
     \item temperatuuri jaotuse määramine kihtides sõltuvalt sise- ja väliskeskkonna temperatuuridest ning 
@@ -35,11 +38,14 @@ Tegemist on klassikalise ehitusfüüsika ülesandega, mille lehandemiseks peab e
     \item arvutuste kordamine erinevate sise- ja väliskeskkonna parameetrite kombinatsioonidega
 \end{itemize}
 
-Ülesande käsitsi lahendades, koostatakse tabelit, mille ridadesse pannakse kirja kihid ja veergudesse arvutatakse 
-väärtused. Kuigi arvutused ise ei ole väga keerulised (tegemist on tavaliste füüsika valemitega), paraku käsitsi arvutamine 
-võtab tohutult palju aega. Microsoft Excel võimaldab teatud määral protessi automatiseerida, kuid siiski mõned 
-tegevused (näiteks uute kihtide lisamine, või kihtide järjekorra muutmine) jäävad suures osas käsitööks, mis võtab palju 
-aega ja ka soodustab vea tegemist. Pildil \ref{fig:excel_table_sample} on toodud sellise tabeli näide.
+Lahendades ülesannet käsitsi, kasutatakse tabeli meetodit: koostatakse tabel, mille ridadesse pannakse 
+kirja konstruktsiooni kihid ja veergudesse arvutatakse samm sammult väärtused. 
+Kuigi arvutused ei ole keerulised (valemid nimetatud arvutuste teostamiseks on 
+leitavad viide-tud allikatest [\colorbox{BurntOrange}{ToDo}]), paraku käsitsi arvutamine 
+võtab palju aega, kuna igasugune muudatus (kihi lisamine või järjekorra muutmine) tähendab 
+kogu tabeli ümber arvutamist. Pildil \ref{fig:excel_table_sample} on toodud arvutustabel tabeli näide
+seitsmest kihist koosneva konstruktsiooni puhul.
+
 \begin{figure}[ht]
     \centering
     \includegraphics[width=.8\textwidth]{figures/problem_statement/04_calc_table.png}
@@ -47,9 +53,21 @@ aega ja ka soodustab vea tegemist. Pildil \ref{fig:excel_table_sample} on toodud
     \label{fig:excel_table_sample}
 \end{figure}
 
-Analüüsi tulemused esitatakse graafiliselt diagrammi kujul, mille \begin{math}x\end{math} telg on 
-punkti asukoht konstruktsioonis ning \begin{math}y\end{math} teljel on temperatuuri, veeauru küllastus- ja
-osarõhu väärtused vastavas punktis -- näide on todud pildil  \ref{fig:excel_graph_sample}.
+Analüüsi tulemused esitatakse graafiliselt diagrammi kujul, mille \begin{math}x\end{math} teljel väärtused on 
+punkti asukoht konstruktsiooni ristlõikes ning \begin{math}y\end{math} teljel on temperatuuri, veeauru küllastus- ja
+osarõhu väärtused vastavas punktis -- näide diagrammilt on todud pildil  \ref{fig:excel_graph_sample}.
+
+Graafik annab head visuaalset ülevaadet konstruktsiooni kihtides toimuvale. Täpsemalt öeldes, peab vaatama 
+veeauru küllastus- ja osarõhkude jaotuse graafikuid. Veeauru osarõhk iseloomustab veeauru tegelikku kontsentratsiooni
+teatud punktis, küllastusrõhk iseloomustab veeauru konstentratsiooni, mille ületades hakkab veeaur kondenseeruma.
+Veeauru osa- ja küllastusrõhu suhe on suhteline niiskus. Mida lähedam osarõhu graafiku joon küllastusrõhu graafiku 
+joonele, seda kõrgem on suhteline niiskus. Punkt, milles need jooned ristuvad on suhteline niiskus 100\%, mis 
+tähendab kondensaadi tekkimist -- sellist punkti nimetatakse kastepunktiks konstruktsioonis.
+Näide on toodud pildil \ref{fig:excel_graph_sample}: vasakul on niiskustehniline olukord hea, kuna aurutõke asub õiges 
+kohas ning seetõttu osarõhk on konstruktsiooni ristlõige kogu ulatuses jääb küllastusrõhult turvaliselt allapoole.
+Parempoolsel pildil paikneb konstruktsiooni külmemal pool veeaurutihe kiht, mille tõttu läheb osarõhk kõrgeks ning 
+ületab küllastusrõhu väärtust. Tsoonis, kus osarõhk on küllastusrõhust kõrgem, esineb kondensaadi tekkimise oht (pildil
+tsoon on viirutatud helesinisega).
 
 \begin{figure}[ht]
     \centering
@@ -58,18 +76,11 @@ osarõhu väärtused vastavas punktis -- näide on todud pildil  \ref{fig:excel_
     \label{fig:excel_graph_sample}
 \end{figure}
 
-Graafik annab väga head visuaalset ülevaadet konstruktsiooni kihtides toimuvale. Täpsemalt öeldes peab vaatama 
-veeauru küllastus- ja osarõhkude jaotuste graafikuid. Veeauru osa- ja küllastusrõhu suhe on suhteline niiskus. 
-Mida lähedam osarõhu graafiku joon küllastusrõhu graafiku joonele, seda kõrgem on suhteline niiskus. Punkt, milles
-need jooned ristuvad on suhteline niiskus 100\%, mis tähendab kondensaadi tekkimist --  sellist punkti nimetatakse kastepunktiks.
-Näide on toodud pildil \ref{fig:excel_graph_sample}: vasakul on niiskustehniline olukord hea, kuna aurutõke asub õiges kohas, ning paremal
-paiknem konstruktsiooni külmemal pool veeaurupidav kiht, mistõttu läheb osarõhk kõrgeks ja ületab küllastusrõhu väärtust.
-
-Kuigi probleem on üldjoontes lahendatav näiteks \textit{Microsoft Excel} vahenditega, paraku pole see kõige mugavam viis
+Kuigi probleem on lahendatav näiteks \textit{Microsoft Excel} vahenditega, paraku pole see kõige mugavam viis
 mitmel põhjusel. Selline lähenemine vajab palju käsitööd kihtide lisamiseks või ümber paigutamiseks, mis on analüüsi lahutamata
-osa -- proovitakse erinevaid materjale erinevates konstruktsiooni kohtades. Samuti materjalide andmeid on siiski vaja otsida 
-ning hallata nende aktuaalsust ja usaldusväärsust -- aeganõudev töö, mida võiks elimineerida kasutades valmistoodet.
-
+osa -- proovitakse erinevaid materjale erinevates konstruktsiooni kohtades. Lisaks sellele, näidatud arvutus kehtib vaid ühe 
+välisõhu parameetrite kombinatsiooni puhul (temperatuur ja suhteline niiskus), ülevaatliku pildi saamiseks olukorda peab hindama
+ aasta lõikes, mis tähendab, et  peab arvutust kordama iga kuu kliimaandmetega.
 
 \section{Olemasolevad lahendused}
 \label{chapters:problem_statement_existing_solutions}
