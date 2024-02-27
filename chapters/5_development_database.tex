@@ -1,0 +1,12 @@
+\section{Andmebaas}
+Vastavalt käesoleva töö osale \ref{analysis_database_subsection} projekti realiseerimiseks
+on valitud PostgreSQL versioon 16. Andmebaasi juhtprogramm paigaldatakse samale serverile, milles 
+jooksutatakse ka ülejäänud infosüsteem. PostgreSQL on Ubuntus paigaldamiseks saadaval
+\textit{apt} repositooriumil. Peale paigaldamist redigeeritakse PostgreSQL konfiguratsiooni,
+seadistades porti, mida kuulatakse ning aadressid, millistelt võetakse päringuid vastu.
+Turvalisuse mõttes luuakse loodavale rakendusele eraldi PostgreSQL kasutajat parooliga, piirates kasutaja õigusi.
+
+Andmebaasile tehakse iganädalaseid salvestusi. Selle jaoks luuakse skripti 
+
+
+

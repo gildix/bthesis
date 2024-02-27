@@ -19,6 +19,7 @@ peab kasutusele võtma võimalikult uued, aga samas ka stabiilsed ja pikema toeg
  
 
 \subsection{Kasutajaliides}
+\label{analysis_interface_subsection}
 Kasutajaliides implementeeritakse üheleherakendusena (SPA). SPA tehnoloogia võimaldab minimeerida 
 andmevahetuse mahtusid: serverilt küsitakse ja vastavalt kliendile saadetakse ainult need andmed, 
 mida on hetkel tarvis. Arendatava infosüsteemi kontekstis see on oluline, sest kõiki arvutusi 
@@ -78,6 +79,7 @@ mis on käesoleva töö koostamise hetkel v18.2.
 
 
 \subsection{Serveriosa}
+\label{analysis_backend_subsection}
 Serveril töötav \textit{backend} rakendus tegeleb kasutajaliidese päringute töötlusega ja andmete saatmisega.
 Samuti \textit{backend} osa suhtleb andmebaasiga, küsides ja redigeerides andmeid. Rakenduse serveriosa on võimalik
 implementeerida kasutades järgmiseid programmeerimiskeeli:
@@ -155,6 +157,7 @@ lähtutakse saadaval oleva programmeerimisressurssi oskuste tasemest erinevate r
 oli tehnoloogiaks valitud C\# keeles kirjutatud .NET raamistik.
 
 \subsection{Andmebaasi juhtprogramm}
+\label{analysis_database_subsection}
 Kuna inosüsteemi äriloogika ei eelda suurte andmete mahtude säilimist, seetõttu ka andmebaasi juhtsüsteemi 
 valiku osas on nõuded tagasihoidlikud: \textit{Open Source} tüüpi litsents, et välistada lisakulusid ning
 võimalus ühendada andmebaasimootor valitud serveriosa raamistikuga (.NET). Kõige populaarsemad 
