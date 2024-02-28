@@ -9,7 +9,14 @@ Serveriosa arhitektuur on kihiline -- andmete töötlus alates andmebaasist küs
 Kihtide eesmärk on selgelt eristada andmete töötlust loogika ja otstarve järgi. Andmete representeerimise kiht tegeleb andmete 
 kasutajaliidesele saatmise ja kasutajaliideselt vastuvõtmisega ning ei pea mitte midagi teadma sellest, mis toimub andmetega hiljem --
 see on äriloogika kihi töö. Analoogselt ka andmete ligipääsu kihis teostatakse ainult andmete küsimist ja salvestamist andmebaasile
-(antud töö raames -- raamistiku kaudu), välistades igasugused infosüsteemi äriloogikaga seotud tegevused.
+(antud töö raames -- raamistiku kaudu), välistades igasugused infosüsteemi äriloogikaga seotud tegevused. Kihid on näidatu pildil
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=1\textwidth]{figures/development/backend_structure.png}
+    \caption[Serveriosa kihtide skemaatiline joonis]{\textit{Serveriosa kihtide skemaatiline joonis}}
+    \label{fig:development_backend_layers}
+\end{figure}
  
 
 \textbf{Domain} (andmebaasi) kihis realiseeritakse projekteeritud andmebaasi mudel vastavate klassidena (näiteks \textit{Domain.App.Material},
