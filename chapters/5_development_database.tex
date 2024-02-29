@@ -1,12 +1,15 @@
 \section{Andmebaas}
 Vastavalt käesoleva töö osale \ref{analysis_database_subsection} projekti realiseerimiseks
 on valitud PostgreSQL versioon 16. Andmebaasi juhtprogramm paigaldatakse samale serverile, milles 
-jooksutatakse ka ülejäänud infosüsteem. PostgreSQL on Ubuntus paigaldamiseks saadaval
-\textit{apt} repositooriumil. Peale paigaldamist redigeeritakse PostgreSQL konfiguratsiooni,
-seadistades porti, mida kuulatakse ning aadressid, millistelt võetakse päringuid vastu.
-Turvalisuse mõttes luuakse loodavale rakendusele eraldi PostgreSQL kasutajat parooliga, piirates kasutaja õigusi.
+käivitatakse ka ülejäänud infosüsteemi osad. PostgreSQL on Ubuntus paigaldamiseks saadaval
+\textit{apt} repositooriumil. Peale paigaldamist redigeeritakse PostgreSQL konfiguratsiooni - 
+\textit{postgresql.conf} ja \textit{pg hba.conf}, seadistades porti, mida kuulatakse (5432) ning 
+IP aadressid, millistelt võetakse päringuid vastu.
 
-Andmebaasile tehakse iganädalaseid salvestusi. Selle jaoks luuakse skripti 
+Turvalisuse tagamiseks luuakse arendatavale rakendusele eraldi PostgreSQL kasutajat parooliga, 
+piirates kasutaja õigusi ühe konkreetse andmebaasiga, mis on rakenduse funktsioneerimiseks tarvis.
+Andmebaasile tehakse iganädalaseid varukoopiaid, mida salvestatakse serveril. Selle jaoks luuakse skripti,
+mida määratakse Ubuntu Cron regulaarse tööna.
 
 
 
