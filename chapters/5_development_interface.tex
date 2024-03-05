@@ -2,9 +2,39 @@
 Vastavalt peatükile \ref{analysis_interface_subsection} kasutajaliidese realiseerimise tehnoloogiaks
 on valitud React.Js raamistik.
 
+Kasutajaliidese rakendus koosneb \textit{React JSX.Element} komponentidest ja teenustest.
+Komponendid tagavad rakendusele nõutud funktsionaalsust ja välimust ning teenused vahendavad andmeid komponentide 
+ja serveriosa vahel.
 
-Kasutajaliidese tehnoloogia valik, arhitektuur, koodi näited, deployment (Apache, proxy requests to backend)
+Materjali loomiseks ja redigeerimiseks on luuakse vorm, mis täidab samaaegselt mõlemat rolli. 
+Kui vormi avamisel oli edasi antud materjalid ID, siis laetakse vastav materjal andmebaasist redigeerimiseks, 
+kui ID ei olnud - kohe vormi avamisel luuaks päringuga uus materjal mustandi staatusega.
+Materjali vorm koosneb kahest React komponendist - vormi põhi ja materjali omaduse plokk.
+Vormi põhi on suurem komponent \textit{MaterialForm}, mille kaudu redigeeritakse materjali staatilised 
+väljad:
 
+\begin{itemize}
+    \item nimetus (\textit{title}) -- tekstiväli,
+    \item materjali tüüp (\textit{materialCategoryId}) -- valiklist materjalide kategooriatest, 
+    \item tootja (\textit{manufacturerId}) -- valiklist materjalide tootjatest,
+    \item allikas (\textit{source}) -- tekstiväli,
+    \item viide allikale (\textit{link}) -- tekstiväli,
+    \item kommentaar (\textit{comment}) -- tekstiväli.
+\end{itemize}
 
+Materjalide omaduste (nt tihedus, soojusjuhtivus) arv on muutuv -- mõne materjali puhul võivad olla salvestatud
+kõik omadused, teise materjali puhul vaid mõned neist. Lisaks sellele võib tulevikus infosüsteemisse lisatud
+võimalus salvestada muud omadused teiste arvutuste jaoks. Sellest tingituna peab olema võimalus kuvada
+ja redigeerida need omadused, mis on materjali puhul määrata. Lisaks peavad olema näidatud ka omadused,
+mida on võimalik lisaks määrata. Materjali omadusi redigeerimiseks tehakse väiksem taaskasutatav 
+komponent \textit{MaterialPropertyCard}. Komponendil on järgmised väljad:
+\begin{itemize}
+    \item väärtus (\textit{value}) -- materjali omaduse arvuline väärtus,
+    \item tõendatud (\textit{verified}) -- boolean väärtus,
+    \item allikas (\textit{source}) -- tekstiväli.
+\end{itemize}
 
-
+Komponendil \textit{MaterialPropertyCard} puudub olek, komponendile antakse listist 
+\textit{materjal.materialProperties} edasi üks objekt ja funktsioon, mis töötleb sisendite andmeid
+ja tagastab põhikomponendisse sisestatud väärtused. Põhikomponendis uuendatakse olekut ja vastavalt
+saadetakse ka päringuid materjali uuendamiseks andmebaasis.
