@@ -100,3 +100,14 @@ Alamkomponentide loogika on piiratud oma vastutusalaga, kõik alamkomponendid on
 oleva teenuse kaudu (\textit{CalculationService}). Põhikomponent küsib teenuse kaudu serveriosalt andmeid, mis on tarvis kalkulaatoris olevate valiklistide täitmiseks ja komplekteerib
 kasutajas isendist andmeobjekti, mille struktuur vastab vastab serveriosa vastavale liidesele. Samuti komponent saadab serverile päringut arvutuse lähteandmetega ning 
 töötleb ja edastab vastust tulemuste esitamise komponendile.
+
+Tulemuste esitamise komponent \textit{ResultBlock.tsx} tegeleb tulemuste representeerimisega graafilisel viisil: joonestatakse lihtsustatud kujul mudeldatud konstruktsiooni skeemi, 
+mille peale kantakse serverilt tulnud andmete põhjal temperatuuri ja veeaururõhkude graafiku jooned. Nõutud fuktsionaalsus on otstarbekas lahendada HTML5 \textit{canvas} elemendiga, mis
+on ette nähtud kahemõõtmeliste piltide genereerimiseks; element on manipuleeritav \textit{JavaScript} keelega. 
+
+Konstruktsiooni skemaatilise joonise koostamiseks on lähteandmeteks konstruktsiooni kihtide objekt (list). Igas kihis sisaldub teave, mis on tarvis joonise koostamiseks: 
+kihi paksus (väljendatud millimeetrites), kihi materjal koos materjali kategooriaga. 
+Konstruktsiooni kihtide paksustest arvutatakse proportsionaalsed väärtused \textit{canvas} elemendil kuvamiseks. Iga kihi lisamisega arvutatakse proportsioonid uuesti - kihtide arvu
+ja vastavalt konstruktsiooni kogupaksuse suurendamisega muutub mõõtkava väiksemaks. Kihtide värvilise täide tegemiseks võetakse värvi kood materjali kategoorias salvestatud koodist.
+Materjali kategooriate värvikoode saab kasutaja vastaval rakenduse lehel redigeerida. 
+
