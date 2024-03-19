@@ -1,9 +1,10 @@
 \section{Probleemi uurimine}
 \label{chapters:problem_statement_research}
 
-Ehitusfüüsika mõistes kujutab ehituskonstruktsioon endast struktuuri, mis koosneb erinevate füüsikaliste oma-dustega kihtidest 
- ning eraldab kaks erinevat keskkonda. Näitena võib tuua kolmekihilist välisseina raudbetoonpaneeli,
-mis koosneb kolmest kihist: kandev osa, soojustuse kiht ja betoonist fassaadikiht. Välisseina ühel pool on 
+Ehitusfüüsika mõistes ehituskonstruktsioon kujutab endast struktuuri, mis koosneb erinevate füüsikaliste oma-dustega kihtidest 
+ning eraldab kaks erinevat keskkonda. Näitena võib tuua kolmekihilist välisseina raudbetoonpaneeli, mis on täna
+elamuehituses laialt levinud piirdekonstruktsiooni lahenduseks\cite{piir_sw_walls}.
+Tavaline kolmekihiline betoonist välisseinaelement koosneb järgmistest kihtidest: betoonist kandev osa, soojustuse kiht ja betoonist fassaadikiht. Välisseina ühel pool on 
 hoone sees olev soe õhk ning teisel pool on väljas olev külm õhk -- Pilt \ref{fig:construction_sample}. 
 
 \begin{figure}[ht]
@@ -19,12 +20,12 @@ ainult ühele, kuna see on kõige enam kasutatud nii teadusallikates, kui ka ehi
 \begin{math}\mu\end{math} - diffusioonitakistustegur \cite{building_physics_abc}. Infosüsteemi andmemudeli projekteerimisel tuleb kohe arvesse võtma
 võimalust lisada tulevikus materjalile ka muud omadused, mis on tarvis teiste tööriistade arendamiseks.
 
-Teatud tingimustel võib tekkida olukord, kui konstruktsiooni ristlõikes on mingis punktis suhteline niiskus
+Teatud tingimustel võib tekkida olukord, kui konstruktsiooni ristlõikes on mõnes punktis suhteline niiskus
 piisavalt kõrge, et soodustada kondensaadi tekkimist. Nimetatud olukord on ohtlik
 nii ehituskonstruktsioonile, mis võib pikaajalise niiskuse mõjul laguneda, kui ka inimese tervisele, sest konstruktsioonide
 sees tekkiv hallitus on siseruumide õhku sattuvate bakterite allikaks \cite{rokka_hygrothermal}.    
 Seda, kuidas konstruktsioonis toimuvad niiskuse leviku protsessid sõltuvalt materjalide omadustest ja 
-paiknemisest ning ümbritsevatest tingimustest, nimetatakse konstruktsiooni niiskustehniliseks toimivuseks. Arvutust,
+paiknemisest ning ümbritsevatest tingimustest, nimetatakse konstruktsiooni niiskustehniliseks toimivuseks\cite{iso_13788}. Arvutust,
 mille abil võib neid protsesse modelleerida ja kondenseerumise riski hinnata, nimetatakse niiskustehnilise toimivuse
 analüüsiks.
 
@@ -46,7 +47,7 @@ kirja konstruktsiooni kihid ja veergudesse arvutatakse samm sammult väärtused.
 Kuigi arvutused ei ole keerulised (valemid nimetatud arvutuste teostamiseks on 
 leitavad viidetud allikatest \cite{building_physics_abc}\cite{iso_13788}\cite{ehituskonstruktor}, paraku käsitsi arvutamine 
 võtab palju aega, kuna igasugune muudatus (kihi lisamine või järjekorra muutmine) tähendab 
-kogu tabeli ümber arvutamist. Pildil \ref{fig:excel_table_sample} on toodud autori poolt koostatud arvutustabeli näide
+kogu tabeli ümber arvutamist. Joonisel \ref{fig:excel_table_sample} on toodud autori poolt koostatud arvutustabeli näide
 seitsmest kihist koosneva konstruktsiooni puhul.
  
 \begin{figure}[ht]
@@ -56,20 +57,22 @@ seitsmest kihist koosneva konstruktsiooni puhul.
     \label{fig:excel_table_sample}
 \end{figure}
 
-Analüüsi tulemused esitatakse graafiliselt diagrammi kujul, mille \begin{math}x\end{math} teljel väärtused on 
+Analüüsi tulemused esitatakse graafiliselt diagrammil, mille \begin{math}x\end{math} teljel väärtused on 
 punkti asukoht konstruktsiooni ristlõikes ning \begin{math}y\end{math} teljel on temperatuuri, veeauru küllastus- ja
-osarõhu väärtused vastavas punktis -- näide diagrammilt on todud pildil  \ref{fig:excel_graph_sample}.
+osarõhu väärtused vastavas punktis -- näide diagrammilt on todud joonisel  \ref{fig:excel_graph_sample}.
 
-Graafik annab head visuaalset ülevaadet konstruktsiooni kihtides toimuvale. Täpsemalt öeldes, peab vaatama 
+Graafik annab head visuaalset ülevaadet konstruktsiooni kihtides toimuvale. Graafikult uuritakse kõigepealt 
 veeauru küllastus- ja osarõhkude jaotuse graafikuid. Veeauru osarõhk iseloomustab veeauru tegelikku kontsentratsiooni
 teatud punktis, küllastusrõhk iseloomustab veeauru kontsentratsiooni, mille ületades hakkab veeaur kondenseeruma.
 Veeauru osa- ja küllastusrõhu suhe on suhteline niiskus. Mida lähedam osarõhu graafiku joon küllastusrõhu graafiku 
 joonele, seda kõrgem on suhteline niiskus. Punkt, milles need jooned ristuvad on suhteline niiskus 100\%, mis 
-tähendab kondensaadi tekkimist -- sellist punkti nimetatakse kastepunktiks konstruktsioonis.
-Näide on toodud pildil \ref{fig:excel_graph_sample}: vasakul on niiskustehniline olukord hea, kuna aurutõke asub õiges 
+tähendab kondensaadi tekkimist -- sellist punkti nimetatakse kastepunktiks konstruktsioonis. Mõnikord lisatakse graafikule
+eraldi ka suhtelise niiskuse joont, mis annab ülevaadet niiskuslikule olukorrale. Mõnede ehitusmaterjalide puhul pidevalt
+kõrge suhteline niiskus võib soodustada mikrobioloogiliste kahjustuste tekkimist ka ilma kondensaadi (lahtise vee) tekkimiseta\cite{majavammist}
+Näide on toodud Joonisel \ref{fig:excel_graph_sample}: vasakul on niiskustehniline olukord hea, kuna aurutõke asub õiges 
 kohas ning seetõttu osarõhk on konstruktsiooni ristlõige kogu ulatuses jääb küllastusrõhult turvaliselt allapoole.
-Parempoolsel pildil paikneb konstruktsiooni külmemal pool veeaurutihe kiht, mille tõttu läheb osarõhk kõrgeks ning 
-ületab küllastusrõhu väärtust. Tsoonis, kus osarõhk on küllastusrõhust kõrgem, esineb kondensaadi tekkimise oht (pildil
+Parempoolsel joonisel paikneb konstruktsiooni külmemal pool veeaurutihe kiht, mille tõttu läheb osarõhk kõrgeks ning 
+ületab küllastusrõhu väärtust. Tsoonis, kus osarõhk on küllastusrõhust kõrgem, esineb kondensaadi tekkimise oht (joonisel
 tsoon on viirutatud helesinisega).
 
 \begin{figure}[ht]
@@ -146,7 +149,8 @@ tarkvara võimaldab koostada ja analüüsida konstruktsiooni sõlme. Samuti on t
 ilmaandmed. Tavakasutaja jaoks viimane on ühtlasi ka puuduseks, sest kliimatingimuste mudeldamine eeldab ilmatingimuste 
 (sealhulgas ka andmed päikesekiirgusest, sademetest) andmebaasi olemasolu. Samuti vajab tarkvara ka kasutaja koolitust, 
 mida tootja pakub ka pakub hinnaga 800 eurot. Eeltoodud asjaolud teevad antud tarkvara sobilikuks ja otstarbekaks
-nendele, kellel ehitusfüüsika arvutused on põhitegevuseks (nt tarkvara on laialt kasutusel teadusvaldkonnas). 
+nendele, kellel ehitusfüüsika arvutused on põhitegevuseks (nt tarkvara on laialt kasutusel teadusvaldkonnas 
+\cite{rokka_hygrothermal}\cite{cukkere_hygrotherm}\cite{kohtla_koolimaja_uuring}). 
 
 \begin{figure}[ht]
     \centering
