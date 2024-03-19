@@ -1,9 +1,9 @@
 \section{Probleemi uurimine}
 \label{chapters:problem_statement_research}
 
-Ehitusfüüsika mõistes ehituskonstruktsioon kujutab endast erinevate füüsikaliste oma-dustega kihtidest 
-koosnevat struktuuri, mis eraldab kaks erinevat keskkonda. Näitena võib tuuad kolmekihilist välisseina raudbetoonpaneeli,
-mis koosneb kolmesti kihist: 0kandev osa, soojustuse kiht ja betoonfassaad. Paneeli ühel pool on 
+Ehitusfüüsika mõistes kujutab ehituskonstruktsioon endast struktuuri, mis koosneb erinevate füüsikaliste oma-dustega kihtidest 
+ ning eraldab kaks erinevat keskkonda. Näitena võib tuua kolmekihilist välisseina raudbetoonpaneeli,
+mis koosneb kolmest kihist: kandev osa, soojustuse kiht ja betoonist fassaadikiht. Välisseina ühel pool on 
 hoone sees olev soe õhk ning teisel pool on väljas olev külm õhk -- Pilt \ref{fig:construction_sample}. 
 
 \begin{figure}[ht]
@@ -15,40 +15,40 @@ hoone sees olev soe õhk ning teisel pool on väljas olev külm õhk -- Pilt \re
 
 Sellises olukorras kõige olulisemad materjalide omadused on soojuserijuhtivus \begin{math}\lambda\end{math} [W/mK]
 ja veeaurutakistus, mis võib olla väljendatud mitmel viisil (viise on palju, aga käesolevas töös keskendutakse 
-ainult ühele, kuna see on kõige enam kasutatud nii teadusallikates, kui ka ehitusmaterialide dokumentides):
+ainult ühele, kuna see on kõige enam kasutatud nii teadusallikates, kui ka ehitusmaterjalide dokumentides):
 \begin{math}\mu\end{math} - diffusioonitakistustegur \cite{building_physics_abc}. Infosüsteemi andmemudeli projekteerimisel tuleb kohe arvesse võtma
 võimalust lisada tulevikus materjalile ka muud omadused, mis on tarvis teiste tööriistade arendamiseks.
 
 Teatud tingimustel võib tekkida olukord, kui konstruktsiooni ristlõikes on mingis punktis suhteline niiskus
-piisavalt kõrge, et soodustada kondensaadi tekkimist \cite{building_physics_abc}. Nimetatud olukord on ohtlik
+piisavalt kõrge, et soodustada kondensaadi tekkimist. Nimetatud olukord on ohtlik
 nii ehituskonstruktsioonile, mis võib pikaajalise niiskuse mõjul laguneda, kui ka inimese tervisele, sest konstruktsioonide
-sees tekkiv hallitus on siseruumide õhku sattuvate bakterite allikaks  \cite{building_physics_abc}. 
+sees tekkiv hallitus on siseruumide õhku sattuvate bakterite allikaks \cite{rokka_hygrothermal}.    
 Seda, kuidas konstruktsioonis toimuvad niiskuse leviku protsessid sõltuvalt materjalide omadustest ja 
 paiknemisest ning ümbritsevatest tingimustest, nimetatakse konstruktsiooni niiskustehniliseks toimivuseks. Arvutust,
 mille abil võib neid protsesse modelleerida ja kondenseerumise riski hinnata, nimetatakse niiskustehnilise toimivuse
 analüüsiks.
 
-Tegemist on klassikalise ehitusfüüsika ülesandega, mille lehandemiseks peab ette võtma järgmiseid samme \cite{iso_13788}:
+Tegemist on ehitusfüüsika ülesandega, mille lehandemiseks peab ette võtma järgmiseid samme \cite{iso_13788}:
 \begin{itemize}
     \item konstruktsiooni kihtide soojustakistuse ja konstruktsiooni summaarse soojustakistuse arvtus
     \item temperatuuri jaotuse määramine kihtides sõltuvalt sise- ja väliskeskkonna temperatuuridest ning 
-    soojustakistuste väärtustest
+    soojustakistuste väärtustest 
     \item konstruktsiooni kihtide veeaurutakistuse ja konstruktsiooni summaarse veeaurutakistuse arvutus
     \item veeauru küllastusrõhu jaotuse määramine lähtuvalt temperatuuri jaotusest
     \item veeauru osarõhu jaotuse määramine kihides sõltuvalt sise- ja väliskeskkonna parameetritest ning 
-    veeaurutakistuse väärtustest
-    \item tulemuste esitamine graafiliselt diagrammil
+    veeaurutakistuse väärtustest 
+    \item tulemuste esitamine graafiliselt diagrammil 
     \item arvutuste kordamine erinevate sise- ja väliskeskkonna parameetrite kombinatsioonidega
 \end{itemize}
 
 Lahendades ülesannet käsitsi, kasutatakse tabeli meetodit: koostatakse tabel, mille ridadesse pannakse 
 kirja konstruktsiooni kihid ja veergudesse arvutatakse samm sammult väärtused. 
 Kuigi arvutused ei ole keerulised (valemid nimetatud arvutuste teostamiseks on 
-leitavad viide-tud allikatest [\colorbox{BurntOrange}{ToDo}]), paraku käsitsi arvutamine 
+leitavad viidetud allikatest \cite{building_physics_abc}\cite{iso_13788}\cite{ehituskonstruktor}, paraku käsitsi arvutamine 
 võtab palju aega, kuna igasugune muudatus (kihi lisamine või järjekorra muutmine) tähendab 
-kogu tabeli ümber arvutamist. Pildil \ref{fig:excel_table_sample} on toodud arvutustabel tabeli näide
+kogu tabeli ümber arvutamist. Pildil \ref{fig:excel_table_sample} on toodud autori poolt koostatud arvutustabeli näide
 seitsmest kihist koosneva konstruktsiooni puhul.
-
+ 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=1\textwidth]{figures/problem_statement/04_calc_table.png}
@@ -62,7 +62,7 @@ osarõhu väärtused vastavas punktis -- näide diagrammilt on todud pildil  \re
 
 Graafik annab head visuaalset ülevaadet konstruktsiooni kihtides toimuvale. Täpsemalt öeldes, peab vaatama 
 veeauru küllastus- ja osarõhkude jaotuse graafikuid. Veeauru osarõhk iseloomustab veeauru tegelikku kontsentratsiooni
-teatud punktis, küllastusrõhk iseloomustab veeauru konstentratsiooni, mille ületades hakkab veeaur kondenseeruma.
+teatud punktis, küllastusrõhk iseloomustab veeauru kontsentratsiooni, mille ületades hakkab veeaur kondenseeruma.
 Veeauru osa- ja küllastusrõhu suhe on suhteline niiskus. Mida lähedam osarõhu graafiku joon küllastusrõhu graafiku 
 joonele, seda kõrgem on suhteline niiskus. Punkt, milles need jooned ristuvad on suhteline niiskus 100\%, mis 
 tähendab kondensaadi tekkimist -- sellist punkti nimetatakse kastepunktiks konstruktsioonis.
@@ -88,7 +88,7 @@ välisõhu parameetrite kombinatsiooni puhul (temperatuur ja suhteline niiskus),
 \section{Olemasolevad lahendused}
 \label{chapters:problem_statement_existing_solutions}
 Üks populaarsematest analoogsetest lahendustest, mis on inseneridel kasutusel Euroopas, sealhulgas ka Eestis, on Saksa päritoluga tarkvara \textbf{Ubakus}. 
-Tegemist on kommertstarkvaraga, mis töötab veebirkenduse kujul. Tarvara \textit{demo}-versioon on saadaval tasuta.
+Tegemist on kommertstarkvaraga, mis töötab veebirakenduse kujul. Tarvara \textit{demo}-versioon on saadaval tasuta.
 \begin{figure}[ht]
     \centering
     \includegraphics[width=1\textwidth]{figures/problem_statement/01_ubakus.png}
@@ -96,16 +96,16 @@ Tegemist on kommertstarkvaraga, mis töötab veebirkenduse kujul. Tarvara \texti
     \label{fig:ubakus_sample}
 \end{figure}
 
-\textbf{Ubakus} võimaldab teostada konstruktsiooni niiskustehnilist analüüsi. Kasutajaliides võidaldab 
+\textbf{Ubakus} võimaldab teostada konstruktsiooni niiskustehnilist analüüsi. Kasutajaliides võimaldab 
 mudeldada mitmest kihist koosneva konstruktsiooni, valides igale kihile paksust ja materjali, millest 
 kiht koosneb. Tugev eelis on see, et tarkvaraga saab analüüsida ka mittehomogeensete (mitemest erinevast 
-materjalist, nt puitsõrestiksein) kihtidega konstruktsioone -- pilt \ref{fig:ubakus_sample} \cite{ubakus}.
+materjalist, nt puitsõrestiksein) kihtidega konstruktsioone -- Joonis \ref{fig:ubakus_sample} \cite{ubakus}.
 
 Ehitusmaterjalide valik, mida on võimalik konstruktsiooni mudeldamisel kasutada, on piisavalt lai 
 (aga tasuta versioonis piiratud). Tasulises versioonis on samuti võimalik ka oma materjalide 
 lisamine ja kasutamine. Osa materjalidest on abstraktsed (näiteks: betoon, puit, mineraalvill), osa
-on reaalsed turustatavad tooted (näiteks: Isover soojusisolatsioonide valik) -- pilt \ref{fig:ubakus_materials}. Võib puuduseks pidada
-seda, et osa materjale (konkreetsed toted) on Saksamaal ja Kesk-Euroopas turustatavad materjalid, mistõttu selle 
+on reaalsed turustatavad tooted (näiteks: Isover soojusisolatsioonide valik) -- Joonis \ref{fig:ubakus_materials}. Võib puuduseks pidada
+seda, et osa materjale (konkreetsed tooted) on Saksamaal ja Kesk-Euroopas turustatavad materjalid, mistõttu selle 
 tarkvara kasutades Eestis peab kas sisestama vajalikud kohalikud materjalid käsitsi, või arvestada Saksa analoogide
 kasutusest tuleneva arvutuste ebatäpsusega.
 \begin{figure}[ht]
@@ -116,15 +116,15 @@ kasutusest tuleneva arvutuste ebatäpsusega.
 \end{figure}
 
 Keskkonnatingimused valitakse manuaalselt sisestades õhutemperatuuri ja -niiskuse väärtused. Rakendus võimaldab arvutuste tulemust
-vaadata erineval viisil, alates lihtsamast 3D visualiseeringust kuni värvilise temperatuurikaardini. Tarkavara saab osa aastase 
+vaadata erineval viisil, alates lihtsamast 3D visualiseerimist kuni värvilise temperatuurikaardini. Tarkavara saab osa aastase 
 tellimusega, mille maksumus on alates 50 kuni 120 eurot sõltuvalt valitud paketist. Objektiivselt vaadates on tarkvara hea nii
 funktsionaalsuse kui ka hinna seisukohalt. Lisaks sellele on ka kasutajaliides piisavalt mugav ja intuitiivselt arusaadav,
 et seda saaks kasutada ka inimene, kellel puuduvad sügavad teadmised valdkonnast. Nagu varem oli mainitud, 
-takvara on suunatud eelkõige Kesk-Euroopa ja Canada turgudele, Balti ja Skandinaavia riigidele lokaliseerimine puudub. Kokkuvõttes
+tarkvara on suunatud eelkõige Kesk-Euroopa ja Canada turgudele, Balti ja Skandinaavia riikidele lokaliseerimine puudub. Kokkuvõttes
 antud lahendust võib kindlasti võtta arvesse toote funktsionaalsuse kavandamisel.
 
 \textbf{Physibel Glasta} on üks analoogne lahendus veel, mis on samuti kommertstarkvara. Tegemist on samuti arvutile paigaldatava tarkvaraga, mille
-kasutajaliides on veidi keerulisem ja ka disain on oluliselt konservatiivsem (pilt \ref{fig:glasta_sample}) \cite{glasta}. 
+kasutajaliides on veidi keerulisem ja ka disain on oluliselt konservatiivsem (Joonis \ref{fig:glasta_sample}) \cite{glasta}. 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=1\textwidth]{figures/problem_statement/09_glasta_sample.png}
@@ -136,7 +136,7 @@ Selle tarkvara funktsionaalsuse tugev eelis on võimalus teostada analüüsi aas
 kondenseerumise probleem esineb vaid teatud perioodil (tavaliselt külmal hooajal),
 ülejäänud ajal toimub kuivamine. See, et ühel või kahel talvisel kuul esineb konstruktsioonis kondenseerumise oht ei pruugi
 olla probleemiks, kui ülejäänud ajal jõuab konstruktsioon täielikult kuivada. Antud asjaolu Glasta tarkvara analüüsib ning 
-tulemust esitatakse ka graafikul (pilt \ref{fig:glasta_sample}). Antud funktsionaalsus on äärmiselt oluline ja selle vajadusega peab toote 
+tulemust esitatakse ka graafikul (Joonis \ref{fig:glasta_sample}). Antud funktsionaalsus on äärmiselt oluline ja selle vajadusega peab toote 
 planeerimisel arvestama. Tarkvara hind on suurusjärgus 500 eurot aastas, mis on päris kõrge, ning lisaks ka alla laadimise ja 
 paigaldamise vajadus teeb antud lahendust ebamugavaks ja paljudel juhtudel ebaotstarbekaks.
 

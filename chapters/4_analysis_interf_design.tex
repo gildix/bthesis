@@ -4,8 +4,8 @@ MVP funktsionaalsusega (osa \ref{chapters:analysis_requirements}) prototüübi  
 veebirakenduse kasutajaliidesele järgmised vaated:
 \begin{itemize}
     \item Menüüriba
-    \item Registreerimise ja sise logimise vaated
-    \item Dashboard-vaate
+    \item Registreerimise ja sisselogimise vaated
+    \item \textit{Dashboard}-vaate
     \item Kasutaja andmete vaade
     \item Ehitusmaterjalide nimekirja vaade
     \item Ehitusmaterjali loomise ja redigeerimise vaade
@@ -27,7 +27,7 @@ välimus oleks lakooniline ja professionaalne.
 
 Pealehel (\textit{Dasboard}) näidatakse kaardid, mille kaudu kasutajat juhitakse tööriistadele ja 
 moodulitele, millele on kasutajal ligipääs. Administraatori ja tavakasutaja \textit{Dashboard}-vaated
-on vastavalt erinevad. \textit{Dashboard}-kaartide näide on toodud pildil \ref{fig:desing_dashboard_cards}.
+on vastavalt erinevad. \textit{Dashboard}-kaartide näide on toodud Joonisel \ref{fig:desing_dashboard_cards}.
 \begin{figure}[ht]
     \centering
     \includegraphics[width=1\textwidth]{figures/analysis/desing_dashboard_cards.png}
@@ -37,7 +37,7 @@ on vastavalt erinevad. \textit{Dashboard}-kaartide näide on toodud pildil \ref{
 
 Kõige keerulisem kasutajaliidese osa on kalkulaatori vaade. Vaade on jaotatud kolmeks loogiliseks osaks:
 arvutuse parameetrid, konstruktsiooni kihtide komplekteerimine ja tulemuste graafiline esitamine. 
-Kalkulaatori töövoog on esitatud Pildil \ref{fig:desing_workflow}.
+Kalkulaatori töövoog on esitatud Joonisel \ref{fig:desing_workflow}.
 \begin{figure}[ht]
     \centering
     \includegraphics[width=1\textwidth]{figures/analysis/desing_workflow.png}
@@ -52,7 +52,7 @@ Eesti elamute sisekliima mudelit. Esimesel juhul kasutajale näidatakse väljad 
 niiskuse sisestamiseks, teisel juhul näidatakse valiklist sisekeskkonna profiilidega (EN ISO 13788 kohase
 klassifikatsiooni järgi).  Samuti selles plokis on esitatud ka arvutuse üldised arvulised tulemused -
 konstruktsiooni summaarne soojusjuhtivus (U-arv) ja veeaurutakistus. Parameetrite ploki disain
-on näidatud Pildil \ref{fig:design_calc_parameters}.
+on näidatud Joonisel \ref{fig:design_calc_parameters}.
 \begin{figure}[ht]
     \centering
     \includegraphics[width=1\textwidth]{figures/analysis/desing_calc_parameters.png}
@@ -67,7 +67,7 @@ vastavat nuppu, mille järel näidatakse uue kihi parameetrite vormi. Vormist pe
 valima uue kihi materjal, paksust ning salvestada kiht. Kui uue kihi lisamine (või
 olemasoleva kihi redigeerimine) on algatatud, siis uue kihi lisamise nupp on deaktiveeritud, et
 suunata kasutajad tegeleda vaid ühe kihiga korraga. Lihtsa (ühest materjalist koosneva) kihi lisamise näide
-on toodud Pildil \ref{fig:design_simple_layer}.
+on toodud Joonisel \ref{fig:design_simple_layer}.
 \begin{figure}[ht]
     \centering
     \includegraphics[width=1\textwidth]{figures/analysis/desing_calc_simple_layer.png}
@@ -79,7 +79,7 @@ Mittehomogeense (mitmest erinevast materjalist koosneva) kihi lisamine eeldab ke
 Kasutaja kõigepealt peab määrama peakihi paksust (konstruktsiooniga põiki suunas), seejärel lisada 
 vajalikku arvu alamkihte ja määrama alamkihtide materjalid ja paksused. Alamkihi paksuseks loetakse 
 materjali paksust konstruktsiooniga piki suunas. Kui kõik andmed on valitud, siis uus kiht salvestatakse
-vastava nuppu vajutamisega. Mitmest materjalist koosneva kihi lisamise näide on toodud Pildil \ref{fig:design_simple_layer}.
+vastava nuppu vajutamisega. Mitmest materjalist koosneva kihi lisamise näide on toodud Joonisel \ref{fig:design_simple_layer}.
 \begin{figure}[ht]
     \centering
     \includegraphics[width=1\textwidth]{figures/analysis/desing_calc_multi_layer.png}
@@ -90,9 +90,9 @@ vastava nuppu vajutamisega. Mitmest materjalist koosneva kihi lisamise näide on
 Tulemuste esitamiseks tehakse kalkulaatori lehele kaks plokki. Üks neist on mudeldatud konstruktsiooni skemaatiline joonis,
 mille peal on näidatud konstruktsiooni kihid paksuste väärtustega ja kasutatud materjaliga. Kihtide tausta värv määratakse
 sõltuvalt materjali tüübist (nt betoonid - hall, soojusisolatsioonid - kollane). Tulevikus joonise peale peab lisama 
-temperatuuri ja veeauruosarõhkude jaotuse graafikud, kuid prototüübi puhul antud koht on lihtsustatud ja graafikud
+temperatuuri ja veeauru osarõhkude jaotuse graafikud, kuid prototüübi puhul antud koht on lihtsustatud ja graafikud
 on toodud eraldi plokis. Graafikute ehitamiseks kasutatakse valmislahendust, nt Javascript-i põhine teek Graph.js.
-Tulemuste plokide disain on näidatud piltidel \ref{fig:design_calc_drawing} ja \ref{fig:design_calc_graph}..
+Tulemuste plokkide disain on näidatud Joonisel \ref{fig:design_calc_drawing} ja Joonisel \ref{fig:design_calc_graph}..
 
 \begin{figure}[ht]
     \centering

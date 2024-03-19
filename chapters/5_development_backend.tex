@@ -10,7 +10,7 @@ Kihtide eesmärk on selgelt eristada andmete töötlust loogika ja otstarve jär
 kasutajaliidesele saatmise ja kasutajaliideselt vastuvõtmisega ning ei pea muretsema sellest, mis toimub andmetega äriloogika kihis. 
 Analoogselt ka andmete ligipääsu DAL kihis teostatakse ainult andmete küsimist ja salvestamist andmebaasile
 (antud töö raames -- raamistiku kaudu), võimalikult välistades igasugused infosüsteemi äriloogikaga seotud tegevused. 
-Kihid on näidatu pildil \ref{fig:development_backend_layers}.
+Kihid on näidatu Joonisel \ref{fig:development_backend_layers}.
 
 \begin{figure}[ht]
     \centering
@@ -28,9 +28,9 @@ mille kaudu raamistik suhtleb andmebaasiga. Raamistiku kaudu luuakse andmebaasi 
 võrdleb raamistik uut olekut eelmisega ning genereerib uue skripti.
 
 
-\textbf{DAL} andmete ligipääsu kihis teostatakse tööd andmebaasi konstektsti objektiga (DbContext):  andmeid küsitakse Entity Framework Core-ist ja 
-vastavalt ka salvestatakse \textit{DbContext}-isse. Kiht on jagatud üksusteks -- reposiooriumideks (\textit{Repository}), mis on 
-baasimplementatsioonis kujutavad ennast klassikalist CRUD-tüüpi repositooriumi. Samuti repositooriumis 
+\textbf{DAL} andmete ligipääsu kihis teostatakse tööd andmebaasi konteksti  objektiga (DbContext):  andmeid küsitakse Entity Framework Core-ist ja 
+vastavalt ka salvestatakse \textit{DbContext}-isse. Kiht on jagatud üksusteks -- repositooriumideks (\textit{Repository}), mis on 
+baasimplementatsioonis kujutavad ennast klassikalist CRUD-tüüpi repositooriumit. Samuti repositooriumis 
 tehakse  andmetele ligipääsu kontrolli kasutaja ID alusel -
 nt meetod \textit{GetAllAsync(Guid uid, bool includePublic = false)} vaikimisi küsib andmebaasist kõik olemid, 
 mis kuuluvad kasutajale ID-ga \textit{uid} ning valikuliselt lisatakse ka olemeid, mis on ette nähtud ühiskasutuseks. 
@@ -52,14 +52,14 @@ et võimalikult isoleerida erinevad teenused omavahelt. On ka teenused, mille ee
 näiteks, arvutuste teenus (\textit{CalculationService}), mille otstarve on arvutusteks vajalike andmete komplekteerimine kasutajaliidesele
 saatmiseks, kasutajaliideselt tulnud arvutuse päringu töötlemine, arvutuste teostamine ja arvutuse tulemuste tagastamine.
 \textit{CalculationService} on äriloogika kihi kõike mahukam teenus. Kuna kalkulaatori tööks vajalike andmete maht on suur (materjalide
-andmed, konstruktsioonide tüüpidega seotud andmed, sise- ja välistingimuste andmed), ei ole otstarbekas
+andmed, konstruktsioonide tüüpidega seotud andmed, sisemiste ja välimiste tingimuste andmed), ei ole otstarbekas
 neid kasutajaliidese poolelt küsida eraldi päringutega. Teenuses koostatakse andmete komplekt (\textit{dataset}), mida saadetakse
 kasutajaliidesele ühe päringuga.
 
 \textbf{Public} andmete representeerimise kiht tegeleb päringute vastuvõtmisega ja vastuste saatmisega. Kasutajaliideselt päringuga 
 tulnud andmed valideeritakse, kontrollides etteantud mudelile vastavust, teisaldatakse äriloogika kihi andmeedastus objektiks
 ning antakse üle vastavale äriloogika kihi teenusele. Kuna rakenduse kõigis kihis teatud vea tekkimisel võib programm visata erindeid,
-siis tegeleb kiht ka veahaldusega. Vea tekkimisel püüakse seda try-catch plokiga kinni ja saadetakse kasutajaliidesele informatiivset
+siis tegeleb kiht ka veahaldusega. Vea tekkimisel püütakse seda \textit{try-catch} plokiga kinni ja saadetakse kasutajaliidesele informatiivset
 vastus.
 
 Andmebaasiga ühendust haldab raamistik ise. Programmi käivitamise konfiguratsiooni faili (\textit{appsetting.json}) kaudu

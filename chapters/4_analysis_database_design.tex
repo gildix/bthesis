@@ -1,6 +1,6 @@
 \section{Andmebaasi projekteerimine}
 \label{chapters:analysis_database}
-Arendatavas infosüsteemis kasutatakse relatsioonilist andmebaasi, mille puhul andmeb on koondatud
+Arendatavas infosüsteemis kasutatakse relatsioonilist andmebaasi, mille puhul andmed on koondatud
 tabelitesse. 
 Andmebaasi primaarvõtmeteks kasutatakse GUID võtmed, mis on 128-biti pikkusega sõne.
 GUID on piisavalt pikk, et võtme unikaalsus oleks piisava tõenäosusega tagatud. Samuti GUID on genereeritud
@@ -17,7 +17,7 @@ Sellisel juhul oleks kihi (\textit{MainLayer}) sees oleks kaks alamkihti, üks o
 on puit ning teine on paksusega 550 mm, mille materjaliks on vill. Selline struktuur võimaldab mudeldada
 peaaegu kõikvõimalikud ehituses kasutusel olevad lahendused. Kuna esialgu antud funktsionaalsust
 ei tehta, luuakse igakord uus kiht ühe alamkihiga. Sellisel juhul ka tulevikus süsteem toetab varem loodud
-konstruktsioonide arvutamist. Kihtide mudeldamist käsitlev diagrammi osa on toodud pildil \ref{fig:db_layers_model}.
+konstruktsioonide arvutamist. Kihtide mudeldamist käsitlev diagrammi osa on toodud Joonisel \ref{fig:db_layers_model}.
 
 \begin{figure}[ht]
     \centering
@@ -30,7 +30,7 @@ Selleks, et konstruktsioonide ehitusfüüsikaline arvutamine oleks võimalik, s�
 materjali füüsilised omadused: soojusjuhtivus ja üks veeaurujuhtivust kirjeldatavatest omadustest. On 
 aga ka võimalik, et tulevikus tööriistakasti lisatakse teised arvutusprogrammid, mille jaoks on tarvis teada
 teisi omadusi. Selleks, et võimaldada tulevikus luua vajadusel uusi materjalide omadusi, andmebaasimudelis
-on olemas järgmised objektid: omadus (\textit{Property}) ja materjali omadus (\textit{MaterialProperty}) - pilt 
+on olemas järgmised objektid: omadus (\textit{Property}) ja materjali omadus (\textit{MaterialProperty}) - Joonis 
 \ref{fig:db_properties_model}. Lisaks, selline mudel võimaldab säilitada omaduste muutuste ajalugu.
 Selleks, et arvutused oleksid usaldusväärsed, peab igal materjali omadusel olema märge sellest, kas 
 tegemist on verifitseeritud andmetega ja mis on andmete allikas (nt tootja dokumentatsioon, teadusartikkel).

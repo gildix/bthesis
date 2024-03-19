@@ -20,8 +20,8 @@ administraator. Nõuete sõnastamisel on aluseks töö autori isiklik kogemus ja
     \item redigeerida olemasolevat kihti
     \item kustutada olemasolevat kihti
     \item vahetada kihtide järjekorda
-    \item valida välistingimuste parameetrid
-    \item valida sisetingimuste parameetrid
+    \item valida väliste tingimuste parameetrid
+    \item valida sisemiste tingimuste parameetrid
     \item valida konstruktsiooni tüüp
     \item vaadata tulemusi tabeli kujul (valikuliselt)
     \item vaadata tulemusi graafikul (valikuliselt)
@@ -66,7 +66,7 @@ administraator. Nõuete sõnastamisel on aluseks töö autori isiklik kogemus ja
 \end{itemize}
 
 Funktsionaalsest nõuetest on kokku pandud kasutajalood, mis omakorda jagatud featuurideks. Protsessi visualiseerimiseks on kasutatud Miro interaktiivne
-keskkond. Kliendi kasutajalood on jagatud kuueks featuuriks (pilt \ref{fig:client_userstories}):
+keskkond. Kliendi kasutajalood on jagatud kuueks featuuriks (Joonis \ref{fig:client_userstories}):
 \begin{itemize}
     \item infosüsteemi kasutamine
     \item ehitusmaterjalide andmebaasi haldamine
@@ -76,9 +76,9 @@ keskkond. Kliendi kasutajalood on jagatud kuueks featuuriks (pilt \ref{fig:clien
     \item salvestatud konstruktsioonide haldamine
 \end{itemize}
 
-Administraatori kasutajalood on jagatud kolmeks featuuriks (pilt \ref{fig:admin_userstories}):
+Administraatori kasutajalood on jagatud kolmeks featuuriks (Joonis \ref{fig:admin_userstories}):
 \begin{itemize}
-    \item infossteemi kasutajate haldamine
+    \item infosüsteemi kasutajate haldamine
     \item ehitusmaterjalide avaliku andmebaasi haldamine
     \item lisaandmete baasi haldamine
 \end{itemize}
@@ -87,8 +87,8 @@ Samuti olid kasutajalood kategoriseeritud prioriteedi järgi. Kõrgema prioritee
 Osa funktsionaalsusest, mis on kirjeldatud madala prioriteedi kasutajalugudega, jääb käesoleva lõputöö skoobist välja. Suures osas see puudutab tulemuste esitamise
 viise: mudeldatud konstruktsiooni skemaatilise 2D joonise genereerimine ning selle peale graafikute või värvikaartide pealekandmine eeldab 
 eraldi teeki kirjutamist. Isegi kui värvikaartide puhul õnnestuks leida valmislahendust, siis selle adapteerimine siiski tähendab suurt töömahtu.
-Samuti on MVP skoobist välja jäetud mittehonogeensete kihtidega konstruktsioonide arvutus. Andmemudelid kohe tuleb projekteerida nii, et tulevikus
-see oleks võimalik implementeerida ilma suurte muutusteta , kuid arvutuste ja kasutajaliidese lihtsustamise mõttes jääb see osa esimese iteratsiooni skoobist välja.
+Samuti on MVP skoobist välja jäetud mittehomogeensete kihtidega konstruktsioonide arvutus. Andmemudelid kohe tuleb projekteerida nii, et tulevikus
+see oleks võimalik ellu viia ilma suurte muutusteta, kuid arvutuste ja kasutajaliidese lihtsustamise mõttes jääb see osa esimese iteratsiooni skoobist välja.
 
 
 \begin{figure}[ht]
@@ -113,5 +113,5 @@ lähteandmete (kihid, parameetrid) muutmist, pikk ooteaeg või lehe ümberlaadim
     \item kasutajaliides peab olema kasutajasõbralik -- kasutaja peab intuitiivselt aru saama, mida ta peaks tegema, et 
 jõuda tulemuseni, vajadusel peab ta olema juhitud \textit{popup}-tüüpi infoplokidega;
     \item kasutajaliides peab olema kaasaaegne, st välimus ja veebilehe struktuur peavad
-vastama kaasaaegsetele UX/UI printsiibidele.
+vastama kaasaaegsetele UX/UI printsiipidele.
 \end{itemize}

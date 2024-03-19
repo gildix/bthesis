@@ -1,14 +1,14 @@
 \section{Tehnoloogiate valik}
-Tehnoloogiate valimisel lähtutakse kaasaaegsetest veebirakendamise ehitamise pritsiibidest, arvestatakse
+Tehnoloogiate valimisel lähtutakse kaasaaegsetest veebirakendamise ehitamise printsiipidest, arvestatakse
 rakenduse loogika keerukust, võimalike kasutajate hulka, säilitavate andmete mahtusid ja infosüsteemi
 edasise arengu perspektiive. 
 
 Veebirakendusel peab olema selgelt eristatav serveriosa ja kasutajaliides. Vajadusel saab tulevikus 
-implementeerida ka teised kasutajaliidesed, mis töötavad sama serveriosaga (näiteks: mobiilrakendus).
+lisada ka teised kasutajaliidesed, mis töötavad sama serveriosaga (näiteks: mobiilrakendus).
 See tähendab, et infosüsteemi arhitektuur peab olema REST arhitektuurse stiili nõuete kohane. See eeldab
 ka seda, et andmevahetus kasutajaliidese ja serveriosa vahel peab toimuma HTTP päringutega kasutades 
 JSON (JavaScript Object Notation) formaati. JSON on JavaScript-i põhine andmevahetuse formaat, mis 
-representeerib JavaScript-i andmeobjektid tekstilisel kujul, mida on võimalik saata HTTP 
+representeerib JavaScript-i andmeobjektid teksti kujul, mida on võimalik saata HTTP 
 päringutega üle veebi\cite{about_rest}.
 Lisaks sellele on oluline, et kõik päringud on omavahel sõltumatud, see tähendab, et ühe 
 päringu raames serveriosas alustatakse ja lõpetatakse kõik päringuga seotud protsessid, päringute 
@@ -20,7 +20,7 @@ peab kasutusele võtma võimalikult uued, aga samas ka stabiilsed ja pikema toeg
 
 \subsection{Kasutajaliides}
 \label{analysis_interface_subsection}
-Kasutajaliides implementeeritakse üheleherakendusena (SPA). SPA tehnoloogia võimaldab minimeerida 
+Kasutajaliides teostatakse üheleherakendusena (SPA). SPA tehnoloogia võimaldab minimeerida 
 andmevahetuse mahtusid: serverilt küsitakse ja vastavalt kliendile saadetakse ainult need andmed, 
 mida on hetkel tarvis. Arendatava infosüsteemi kontekstis see on oluline, sest kõiki arvutusi 
 teostatakse serveril ning kliendile saadetakse andmed, mis on vajalikud tulemuste näitamiseks 
@@ -30,13 +30,13 @@ Samuti SPA tehnoloogia võimaldab muuta lehe sisu dünaamilisel viisil -- uuenda
 komponent ilma kogu lehekülje ümberlaadimise vajaduseta \cite{about_spa}. See on ka oluline, kuna tulemuste esitamist 
 peab uuendama dünaamiliselt kohe peale arvutuse lähteandmete muutmist.
 
-Üheleherakenduste implementeerimiseks kasutatakse JavaScript programmeerimiskeelt veebilehe dünaamilise 
+Üheleherakenduste ehitamiseks kasutatakse JavaScript programmeerimiskeelt vfeebilehe dünaamilise 
 loogika juhtimiseks. Soovitavalt kasutada JavaScript keele laiendust -- TypeScript, mis muudab JavaScript-i 
 tugevalt ja staatiliselt tüübitud keeleks \cite{about_typescript}. Lehtede struktuuri ehitamiseks kasutatakse HTML (või raamistikust
 sõltuv laiendatud HTML-i süntaks). Kujundust teostatakse CSS stiilireeglitega ja lihtsustamise mõttes
 võetakse kasutusele ka vastavad teegid nt Bootstrap.
 
-Kuigi on võimalik implementeerida loogikat kasutades puhtat JavaScript koodi, tänapäeval seda tehakse
+Kuigi on võimalik loogikat ellu viia kasutades puhta JavaScript koodi, tänapäeval seda tehakse
 harva. On olemas erinevad lahendused, mis oluliselt lihtsustavad rakenduse ehitamise protsessi, kuid 
 nõuavad ka spetsiifilisi teadmisi. Raamistiku kasutuselevõtt olulisel määral vähendab koodi kirjutamist,
 kuna raamistik ise haldab loogikat, mis on seotud näiteks \textit{Routing}-uga, turvalisusega, komponentide
@@ -44,7 +44,7 @@ genereerimise ja uuendamisega. Spetsiifilise funktsionaalsuse jaoks kasutatakse 
 päringute saatmise ja serveri vastuse töötluseks kasutatakse \textit{Axios} -- teek, mida saab kasutada 
 erinevate raamistikutega.
 
-Üheleherakenduse implementeerimiseks kõige sobilikud JavaScript raamistikud on \textit{React}, \textit{Vue.js}
+Üheleherakenduse ehitamiseks kõige sobilikud JavaScript raamistikud on \textit{React}, \textit{Vue.js}
 ja \textit{Angular}. Kõikidel raamistikutel on oma eripärad alates projekti arhitektuurist kuni 
 koodi süntaksini. 
 
@@ -57,8 +57,8 @@ probleemide tuvastamine ja lahenduste leidmine on piisavalt lihtne. Lisaks selle
 ja teeke, mida saab React raamistikuga ühendada funktsionaalsuse laiendamiseks. 
 
 \textit{Vue.js} on MVVM (Model-View-ViewModel) tüüpi raamistik. Lehe šablooni kujundamiseks kasutatakse HTML, 
-mis siseldab Vue-spetsiifilist süntaksi, mille abil juhib raamistik lehe logikat. Vue rakendus koosneb SFC 
-komponentidest, igas komponndis on eraldi defineritud lehe šabloon, skript ja stiil. Vue.js raamistik on
+mis sisaldab Vue-spetsiifilist süntaksi, mille abil juhib raamistik lehe logikat. Vue rakendus koosneb SFC 
+komponentidest, igas komponendis on eraldi defineeritud lehe šabloon, skript ja stiil. Vue.js raamistik on
 samuti laialt levinud ja selle kohta on võimalik Internetist piisavalt infot leida.
 
 \textit{Angular} on MVC (Model-View-Controller) tüüpi raamistik. Angular-i projekt struktuurselt koosneb
@@ -66,7 +66,7 @@ moodulitest, komponentidest ja teenustest. Angular-is kasutatakse lehe šablooni
 HTML koodi Angular-spetsiifilise süntaksiga. 
 
 Kõik ülaltoodud raamistikud toetavad ka \textit{TypeScript}-i kasutamist. Oma funktsionaalsuse seisukohalt
-kõik toodud raamistikud võimaldavad implementeerida kavandatavat funktsionaalsust (\textit{routing}, 
+kõik toodud raamistikud võimaldavad realiseerida kavandatavat funktsionaalsust (\textit{routing}, 
 oleku juhtimine, komponentide dünaamiline uuendamine), seega määravaks asjaoluks on arendamisega tegeleva 
 programmeerija eelistused. Kuigi töötamise kiirus on raamistikutel erinev, planeeritava rakenduse suurusjärgu
 kontekstis see faktor ei ole kriitiline. 
@@ -74,7 +74,7 @@ kontekstis see faktor ei ole kriitiline.
 Toodud põhjendustel valitakse kasutajaliidese tehnoloogiaks React-i. Programmeerimiskeeleks peab valima TypeScript, 
 mis on erinevalt JavaScript-ist võimaldab teha tüübikirjeldust, tänu millele on programmi käitumine ettearvatavam, 
 vigade tõenäosus väiksem ja kood on üldiselt kvaliteetsem. React on populaarne lahendus, seetõttu eksisteerib palju
-teeke, pluginaid ja leindusi, mida tõneäoliselt saab kasutusele võtta. Kasutada peab React viimane versioon,
+teeke, pluginaid ja laeindusi, mida tõenäoliselt saab kasutusele võtta. Kasutada peab React viimane versioon,
 mis on käesoleva töö koostamise hetkel v18.2.
 
 
@@ -82,9 +82,9 @@ mis on käesoleva töö koostamise hetkel v18.2.
 \label{analysis_backend_subsection}
 Serveril töötav \textit{backend} rakendus tegeleb kasutajaliidese päringute töötlusega ja andmete saatmisega.
 Samuti \textit{backend} osa suhtleb andmebaasiga, küsides ja redigeerides andmeid. Rakenduse serveriosa on võimalik
-implementeerida kasutades järgmiseid programmeerimiskeeli:
+realiseerida kasutades järgmiseid programmeerimiskeeli:
 \begin{itemize}
-    \item \textit{PHP} -- popupaarne ja ka võrdlemisi lihtne programmeerimiskeel (avaldatud 1995. aastal), 
+    \item \textit{PHP} -- populaarne ja ka võrdlemisi lihtne programmeerimiskeel (avaldatud 1995. aastal), 
     mille otstarve oli kohe alguselt suunatud veebilehtede ehitamiseks. Kuigi esialgu PHP kontseptsioon oli selline, 
     et HTML-kood genereeriti serveril ja saadeti veebilehitsejale iga kord uuesti näitamiseks (monoliitne arhitektuur), 
     siis viimasel ajal kastutakse PHP ka REST-tüüpi veebirakendustes, kus serveril töötav PHP programm saadab 
@@ -95,15 +95,15 @@ implementeerida kasutades järgmiseid programmeerimiskeeli:
     tegeleb Oracle. Keel sobib suuremate REST-tüüpi veebirakenduste ehitamiseks, kuid selle kasutusvaldkond on palju laiem kui 
     ainult veebirakendused. Java on tugevalt ja staatiliselt tüübitud keel, mis on suureks eeliseks, kuna alandab
     vigade tekkimise tõenäosust, lisaks on see piisavalt kiire.  Samas eeldab see spetsiifilisi teadmisi 
-    programmeerialt ja ka rakenduse paigaldamine serverile on erinevalt PHP-st ka keerulisem, kuna projekti 
-    ehitamine eeldab palju lisategevusi. Java on kasutusel väga suure kasutajate hulgaga infoüsteemides (sh. ka pangasüsteemid).
+    programmeerijalt ja ka rakenduse paigaldamine serverile on erinevalt PHP-st ka keerulisem, kuna projekti 
+    ehitamine eeldab palju lisategevusi. Java on kasutusel väga suure kasutajate hulgaga infosüsteemides (sh. ka pangasüsteemid).
     \item \textit{C\#} -- objektorienteeritud programmeerimiskeel (avaldatud 2000. aastal), mille arendamisega tegeleb Microsoft. 
     Keele süntaks ja programmi struktuuri põhimõtted on väga sarnased Java-le. Keel on tugevalt tüübitud ja 
     ka programmi struktuur on Java-keelega analoogne. C\# samuti sobib suurte infosüsteemide ehitamiseks.
     \item \textit{Python} --  üldotstarbeline programmeerimiskeel, mille kasutusvaldkond on lai -- programmeerimise 
     õpetamist koolilastele kuni suurte infosüsteemide ehitamiseni -- tänu kõigepealt sellele, et keele süntaks on 
-    võrdlemisi lihtne ning vastavalt keel on kergemini õpitav. Keel on dünaamiliselt tüübitud, mida erinevates s
-    ituatsioonides saab pidada nii eeliseks kui ka puuduseks.
+    võrdlemisi lihtne ning vastavalt keel on kergemini õpitav. Keel on dünaamiliselt tüübitud, mida erinevates 
+    situatsioonides saab pidada nii eeliseks kui ka puuduseks.
 \end{itemize}
 
 Rakenduse ehitamiseks on otstarbekas kasutada analoogselt kasutajaliidesega raamistikku. Kõikidel ülaltoodud
@@ -116,7 +116,7 @@ programmeerimiskeeltel eksisteerivad raamistiku lahendused, mis sobivad veebirak
     mooduleid (nt Spring Security - turvalisust tagav raamistiku osa, Spring MVC - MVC raamistik jm), mis 
     tervikuna moodustavad tugevat infrastruktuuri suurte infosüsteemi ehitamiseks.
     \item \textbf{.NET} - C\# keeles raamistik, mis samuti sobib REST veebirakenduste ehitamiseks. 
-    Vajalik funktsionaalsus on tagatav vastavate paketide paigaldamisega (nt EntityFrameworkCore - 
+    Vajalik funktsionaalsus on tagatav vastavate pakettide paigaldamisega (nt EntityFrameworkCore - 
     ORM raamistik, AspNetCore.Authentification.JwtBearer - JWT tokeni kaudu autentimise võimaldamine).
     Viimastel aastatel on raamistiku populaarsus oluliselt vähenenud.
     \item \textbf{Django} - Python keeles kirjutatud raamistik. On lihtne ja laia funktsionaalsusega,
@@ -127,12 +127,12 @@ Arendatava infosüsteemi seisukohalt peab tehnoloogia sobivuse hindama järgmist
 \begin{itemize}
     \item kiirus -- teenus peab piisavalt kiiresti teostama kõikvõimalikud arvutused, sh kasutades samal
     ajal andmeid andmebaasist.
-    \item turvalisus -- raamistik peab (sisseehitud funktsionaalsus või laiendus) tegelema
+    \item turvalisus -- raamistik peab (sisse ehitatud funktsionaalsus või laiendus) tegelema
     rakenduse turvalisusega sh kasutajate autentimisega. Raamistik peab toetama ka JWT tokeniga
     autentimist.
     \item ORM -- raamistikul peab olema \textit{Object Relational Mapping}-uga tegelev moodul, 
     selleks et lihtsustada andmebaasi andmetega tegutsemist koodis.
-    \item arendaja oskused -- infosüsteemi arendamisega tegeleval ressurssil peavad olema piisavalt teadmisi
+    \item arendaja oskused -- infosüsteemi arendamisega tegeleval ressursil peavad olema piisavalt teadmisi
     ja kogemusi raamistikuga
 \end{itemize} 
 
@@ -158,7 +158,7 @@ oli tehnoloogiaks valitud C\# keeles kirjutatud .NET raamistik.
 
 \subsection{Andmebaasi juhtprogramm}
 \label{analysis_database_subsection}
-Kuna inosüsteemi äriloogika ei eelda suurte andmete mahtude säilimist, seetõttu ka andmebaasi juhtsüsteemi 
+Kuna infosüsteemi äriloogika ei eelda suurte andmete mahtude säilimist, seetõttu ka andmebaasi juhtsüsteemi 
 valiku osas on nõuded tagasihoidlikud: \textit{Open Source} tüüpi litsents, et välistada lisakulusid ning
 võimalus ühendada andmebaasimootor valitud serveriosa raamistikuga (.NET). Kõige populaarsemad 
 \textit{Open Source} litsentsiga andmebaasimootorid on:
@@ -170,6 +170,6 @@ võimalus ühendada andmebaasimootor valitud serveriosa raamistikuga (.NET). Kõ
     \item SQLite
 \end{itemize}
 Kõikidele ülaltoodud süsteemidele eksisteerivad juhtprogrammid .NET EF Core ühendamiseks, seetõttu võib kõik
-toodud lahendused pidada sobilikuks. Valikul lähtutakse sellest, mis tehnoloogiaga on programmerijal rohkem teadmisi 
+toodud lahendused pidada sobilikuks. Valikul lähtutakse sellest, mis tehnoloogiaga on programmeerijal  rohkem teadmisi 
 ja kogemusi. Antud juhul see on PostgreSQL. 
 

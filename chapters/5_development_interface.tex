@@ -6,7 +6,7 @@ Kasutajaliidese rakendus koosneb \textit{React JSX.Element} komponentidest ja te
 Komponendid tagavad rakendusele nõutud funktsionaalsust ja välimust ning teenused vahendavad andmeid komponentide 
 ja serveriosa vahel.
 
-Rakenduse koosseisus on palju erinevaid komponente, suureb osa nendest on lihtsamad komponendid või tavalised
+Rakenduse koosseisus on palju erinevaid komponente, suurem osa nendest on lihtsamad komponendid või tavalised
 CRUD-loogikaga komponendid, mistõttu ei ole nende realiseerimise käesolevas peatükis eraldi kirjeldatud. Koodibaas
 täismahus on vaadatav  Lisas X oleva viitega koodi repositooriumile. Käesolevas peatükis kirjeldatakse vaid mõned
 komponendid, mis infosüsteemi äriloogika seisukohalt vajavad kompleksset ülesehitust ja funktsionaalsust -- 
@@ -50,7 +50,7 @@ sellest, kas
     \item vastav omadus ei ole materjalile lisatud, kuid seda on võimalik lisada.  
 \end{itemize}
 
-Materiali omaduste komponentide välimus mõlemas olekus on näidatud pildil \ref{fig:development_frontend_propertycard}.
+Materjali omaduste komponentide välimus mõlemas olekus on näidatud Joonisel \ref{fig:development_frontend_propertycard}.
  \begin{figure}[ht]
     \centering
     \includegraphics[width=1\textwidth]{figures/development/frontend_propertycard.JPG}
@@ -60,13 +60,13 @@ Materiali omaduste komponentide välimus mõlemas olekus on näidatud pildil \re
 
 Infosüsteemi teine oluline ning keerulisema loogikaga osa on kalkulaator. Kalkulaator koosneb järgmistest plokkidest:
 \begin{itemize}
-    \item arvutuse seadistuste osa, milles valitakse arvutuse parameetrid (sise- ja välis keskkond, konstruktsiooni tüüp);
+    \item arvutuse seadistuste osa, milles valitakse arvutuse parameetrid (sisemine ja välimine keskkonnad, konstruktsiooni tüüp);
     \item konstruktsiooni kihtide plokk, milles lisatakse konstruktsioonile kihte ja valitakse kihtide omadused (materjal, paksus);
     \item tulemuste esitamise plokk, milles graafiliselt esitatakse konstruktsiooni kihtide skemaatilist joonist, graafikuid ning arvuline tulemus 
     (soojusjuhtivus U ja veeaurutakistus Zp).
 \end{itemize}
 
-Kalkulaatori põhiline \textit{React} komponent on \textit{Therm.tsx}. Komponent juhib ja korraldab alluvate komponentide tööd. Komponendis on mitu oleku (\textit{state}) objeki:
+Kalkulaatori põhiline \textit{React} komponent on \textit{Therm.tsx}. Komponent juhib ja korraldab alluvate komponentide tööd. Komponendis on mitu oleku (\textit{state}) objekti:
 \begin{itemize}
     \item \textit{optionsLibrary} -- objekt, mis hoiab arvutuse parameetrite valikud (keskkonnad, konstruktsioonitüübid),
     \item \textit{materials} -- objekt, mis hoiab materjale, mida kasutatakse konstruktsiooni kihtide mudeldamisel,
@@ -77,7 +77,7 @@ Kalkulaatori põhiline \textit{React} komponent on \textit{Therm.tsx}. Komponent
 Ülaltoodud objektide loomiseks kasutatakse  sisseehitatud lahendust \textit{UseState}, mille abil loob React juhitavat oleku objekti. \textit{UseState}
 objektide eelis on oleku muutuste jälgimine ning kõikide olekust sõltuvate komponentide automaatne uuendamine oleku muutmisel.
 
-Kalkulaatori põhikomponent koosneb väiksematest komponentidest, mis oma funktsionaalsusest lähtuvalt vastavad varem nimetatud kalkulaatori plokidele.
+Kalkulaatori põhikomponent koosneb väiksematest komponentidest, mis oma funktsionaalsusest lähtuvalt vastavad varem nimetatud kalkulaatori plokkidele.
 Kalkulaatori alamkomponendid on:
 \begin{itemize}
     \item \textit{ThermOptions.tsx} -- komponendile antakse arvutuse parameetrite andmeobjekt, arvutuse lähteandete objekt ning funktsioon kasutajasisendi töötluseks;
@@ -88,7 +88,7 @@ Kalkulaatori alamkomponendid on:
     \item \textit{ResultBlock.tsx} -- komponendile antakse kihtide plokis koostatud kihtide objekt ning serverilt tulnud arvutuse tulemused graafikute joonestamiseks. 
 \end{itemize}
 
-\textit{Therm.tsx} komponendi struktuur on toodud Pildil \ref{fig:development_frontend_therm}.
+\textit{Therm.tsx} komponendi struktuur on toodud Joonisel \ref{fig:development_frontend_therm}.
 \begin{figure}[ht]
     \centering
     \includegraphics[width=1\textwidth]{figures/development/frontend_term_structure.png}
@@ -98,11 +98,24 @@ Kalkulaatori alamkomponendid on:
 
 Alamkomponentide loogika on piiratud oma vastutusalaga, kõik alamkomponendid on üks teisest sõltumatud ning on juhitud põhikomponendist. Serveriosaga suhtlemine toimub põhikomponendis
 oleva teenuse kaudu (\textit{CalculationService}). Põhikomponent küsib teenuse kaudu serveriosalt andmeid, mis on tarvis kalkulaatoris olevate valiklistide täitmiseks ja komplekteerib
-kasutajas isendist andmeobjekti, mille struktuur vastab vastab serveriosa vastavale liidesele. Samuti komponent saadab serverile päringut arvutuse lähteandmetega ning 
+kasutajas isendist andmeobjekti, mille struktuur vastab serveriosa vastavale liidesele. Samuti komponent saadab serverile päringut arvutuse lähteandmetega ning 
 töötleb ja edastab vastust tulemuste esitamise komponendile.
 
+Konstruktsiooni kihtide modelleerimisega tegeleb kihtide plokk \textit{LayersBlock.tsx} (Joonis \ref{fig:dev_frontend_layersblock}). Komponent kujutab ennast konstruktsiooni kihtide
+nimekirja koos uue kihi lisamise ja olemasolevate kihtide redigeerimise vormidega. Rakenduse äriloogika eeldab, et kasutajal peab olema võimalus kihtide järjekorda muuta, seetõttu
+on nimekiri tehtud dünaamilise nimekirjana, mille puhul saab kasutaja elementide asukohta muuta. Igal nimekirja real on ees ikoon, mille haarates saab kihti tõmmata õigesse kohta. 
+
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=1\textwidth]{figures/development/frontennd_layersblock.png}
+    \caption[LayersBlock.tsx -- konstruktsiooni kihtide modeleerimine]{\textit{LayersBlock.tsx -- konstruktsiooni kihtide modeleerimine}}
+    \label{fig:dev_frontend_layersblock}
+\end{figure}
+
+
 Tulemuste esitamise komponent \textit{ResultBlock.tsx} tegeleb tulemuste representeerimisega graafilisel viisil: joonestatakse lihtsustatud kujul mudeldatud konstruktsiooni skeemi, 
-mille peale kantakse serverilt tulnud andmete põhjal temperatuuri ja veeaururõhkude graafiku jooned. Nõutud fuktsionaalsus on otstarbekas lahendada HTML5 \textit{canvas} elemendiga, mis
+mille peale kantakse serverilt tulnud andmete põhjal temperatuuri ja veeaururõhkude graafiku jooned. Nõutud funktsionaalsus on otstarbekas lahendada HTML5 \textit{canvas} elemendiga, mis
 on ette nähtud kahemõõtmeliste piltide genereerimiseks; element on manipuleeritav \textit{JavaScript} keelega. 
 
 Konstruktsiooni skemaatilise joonise koostamiseks on lähteandmeteks konstruktsiooni kihtide objekt (list). Igas kihis sisaldub teave, mis on tarvis joonise koostamiseks: 
@@ -114,7 +127,7 @@ Materjali kategooriate värvikoode saab kasutaja vastaval rakenduse lehel redige
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=1\textwidth]{figures/development/frontend_result_block.JPG}
+    \includegraphics[width=1\textwidth]{figures/development/frontennd_resultblock.png}
     \caption[ResultBlock.tsx -- tulemuste esitamise plokk]{\textit{ResultBlock.tsx -- tulemuste esitamise plokk}}
     \label{fig:development_frontend_results}
 \end{figure}

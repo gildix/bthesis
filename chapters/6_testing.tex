@@ -1,2 +1,28 @@
 \label{chapters:testing}
-Testimisest..
+Infosüsteemi serveriosa kõige kriitilsema funktsionaalsuse testitakse automaattestimisega.
+Kõigepealt peab automaatteste luua materjalide lisamise testimiseks. Testimisega kontrollitakse
+järgmised materjalide (ja nende omaduste) lisamisega ja turvalisusega seotud väited:
+\begin{itemize}
+    \item kasutaja A näeb avalikke materjale
+    \item kasutaja A saab luua uus materjal
+    \item kasutaja B ei näi kasutaja A poolt loodud materjale
+    \item sisse logimata kasutaja näev avalikud materjalid 
+    \item sisse logimata kasutaja ei näe kasutaja A ja kasutaja B poolt lisatud materjalid
+    \item kasutaja saab lisada materjalile omadust
+    \item kasutaja saab redigeerida materjali omadust
+    \item kasutaja näeb omadusi, mis on materjali puhul olemas
+\end{itemize}
+
+Samamoodi testitakse ka arvutusteenust. Arvutusteenuse testimisel peab kontrollima järgmiseid väiteid:
+\begin{itemize}
+    \item arvutuse lähteandmetes näeb kasutaja tema poolt sisestatud materjalid 
+    \item arvutuse lähteandmetes näeb kasutaja vaid need materjalid, millistele on lisatud
+    arvutuse teostamiseks nõutud omadused
+    \item teenus tagastab õiged arvutuse tulemused
+\end{itemize}
+
+Samuti kontrollitakse, et ebaõnnestunud päringutele tagastab alati teenus adekvaatset ja informatiivset 
+vastust (nt ligipääsu puudumine, vigased päringuga saadetud andmed).
+
+Kasutajaliidese testimist viiakse läbi manuaalse testimisena. Testimise aluseks on peatükis \ref{chapter:analysis} 
+toodud kasutajalugud.
