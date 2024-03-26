@@ -3,7 +3,22 @@
 \subsection{Funktsionaalsed nõuded}
 \label{subsec_func_req}
 Funktsionaalsete nõuete määramisel lähtutakse erinevate osapoolte vajadusest - süsteemi kasutaja ja süsteemi 
-administraator. Nõuete sõnastamisel on aluseks töö autori isiklik kogemus ja teadmised sihtgrupi vajadustest ja nõuetest.
+administraator. Kavandatav funktsionaalsus on määratud lähtuvalt peatükis \ref{chapters:problem_statement_existing_solutions} toodud
+eksisteerivate lahenduste uurimisest.
+
+Infosüsteemi kasutaja (klient) peab saama teostada peatükis \ref{chapters:problem_statement_research} toodud ehituskonstruktsiooni niiskustehnilise toimivuse analüüsi,
+kasutades andmebaasis olevad ehitusmaterjalid. Ehitusmaterjalid võivad olla andmebaasisse lisatud administraatori poolt (avalikud materjalid, mida kõik kasutajad 
+saavad arvutustes kasutada, kuid ei saa redigeerida) või kasutaja poolt (ainult kasutajale nähtavad materjalid, mida kasutaja saab oma arvutustes kasutada ja vastavalt redigeerida).
+
+Niiskustehnilise toimivuse analüüsi arvutuse tegemine eeldab kõigepealt konstruktsiooni modelleerimist. Konstruktsiooni modelleerimine olemasolevas kontekstis on vajalike omadustega
+(materjal või mitu materjali, paksus) kihtide lisamine. Väärtust lisab võimalus kihtide järjekorra muutmine mugaval viisil (nt tõmbamise žestiga, või nupude vajutamisega) -- see annab
+ülevaadet olukorras, kui üks materjal asub konstruktsiooni erinevates kohtades.
+
+Süsteemi administraatori funktsionaalsus eeldab avalikute andmete (ehitusmaterjalid, kliimaandmed) ja kasutajate haldamist. Kuna tulevikus planeeritakse jõuda kommertstooteni, siis
+administraatoril peab olema kontroll registreeritud kasutajate üle. Esialgu võib nimeatud funktsionaalsust lahendada süsteemi poolt genereeritud registreerimisvõtmete kasutamisega 
+-- administraator loob süüsteemisse uus võti, mida saadetakse kasutajaks registreerida soovivale isikule.
+
+Allpool on toodu dnimekiri täpsemalt ja laiemalt sõnastatud funktsionaalsetes nõutest kahe erineva osapoole vaatest:
 
 \textbf{Infosüsteemi kasutajal peab olema võimalus:}
 \begin{itemize}
@@ -29,10 +44,6 @@ administraator. Nõuete sõnastamisel on aluseks töö autori isiklik kogemus ja
     \item peale igat muutust kohe näha uusi tulemusi (arvulised väärtused)
     \item peale igat muutust kohe näha graafikute uuendamist
     \item näha konstruktsiooni skemaatilist joonist
-    \item salvestada mudeldatud konstruktsiooni
-    \item vaadata salvestatud konstruktsioonid
-    \item kustutada salvestatud konstruktsioonid
-    \item avada salvestatud konstruktsioonid kalkulaatoris
     \item muuta kiht mittehomogeenseks
     \item mittehomogeensele kihile lisada alamkihid
     \item valida alamkihtide materjalid
@@ -44,8 +55,6 @@ administraator. Nõuete sõnastamisel on aluseks töö autori isiklik kogemus ja
     \item valida kliimaandmeid dünaamilise analüüsi jaoks
     \item genereerida analüüsi aruanne PDF formaadis
 \end{itemize}
-
-
 
 \textbf{Infosüsteemi administraatoril peab olema võimalus:}
 \begin{itemize}
@@ -65,17 +74,16 @@ administraator. Nõuete sõnastamisel on aluseks töö autori isiklik kogemus ja
     \item lisada kliimaandmeid failina
 \end{itemize}
 
-Funktsionaalsest nõuetest on kokku pandud kasutajalood, mis omakorda jagatud featuurideks. Protsessi visualiseerimiseks on kasutatud Miro interaktiivne
-keskkond. Kliendi kasutajalood on jagatud kuueks featuuriks:
+Eeltoodud funktsionaalsest nõuetest on kokku pandud kasutajalood, mis omakorda jagatud suuremateks peatükkideks -- featuurideks. Featuuridega on infosüsteem jagatud võrdlemisi sõltumatutele
+osadele, mida vajadusel võib arendada paralleelselt. 
+Kliendi kasutajalood on jagatud viieks featuuriks:
 \begin{itemize}
     \item infosüsteemi kasutamine
     \item ehitusmaterjalide andmebaasi haldamine
     \item konstruktsiooni mudeldamine
-    \item arvutuse lisatingimuse seadistamine
+    \item arvutuse lisatingimuse seadistamine 
     \item analüüsi tulemuste esitamine
-    \item salvestatud konstruktsioonide haldamine
 \end{itemize}
-
 Administraatori kasutajalood on jagatud kolmeks featuuriks:
 \begin{itemize}
     \item infosüsteemi kasutajate haldamine
@@ -83,13 +91,17 @@ Administraatori kasutajalood on jagatud kolmeks featuuriks:
     \item lisaandmete baasi haldamine
 \end{itemize}
 
+
 Samuti olid kasutajalood kategoriseeritud prioriteedi järgi. Kõrgema prioriteediga kasutajalood moodustavad MVP funktsionaalsust, mida arendatakse käesoleva lõputöö käigus.
 Osa funktsionaalsusest, mis on kirjeldatud madala prioriteedi kasutajalugudega, jääb käesoleva lõputöö skoobist välja. Suures osas see puudutab tulemuste esitamise
 viise: mudeldatud konstruktsiooni skemaatilise 2D joonise genereerimine ning selle peale graafikute või värvikaartide pealekandmine eeldab 
 eraldi teegi kirjutamist. Samuti on MVP skoobist välja jäetud mittehomogeensete kihtidega konstruktsioonide arvutus. Andmemudelid kohe tuleb projekteerida nii, et tulevikus
-see oleks võimalik ellu viia ilma suurte muutusteta, kuid arvutuste ja kasutajaliidese lihtsustamise mõttes jääb see osa esimese iteratsiooni skoobist välja. 
+see oleks võimalik ellu viia ilma suurte muutusteta, kuid arvutuste ja kasutajaliidese lihtsustamise mõttes jääb see osa esimese iteratsiooni skoobist välja. MVP funktisonaalsuse 
+kliendi kasutajalood on toodud Joonisel \ref{fig:client_userstories}. Ülejäänud kasutajalood (sh administraatori kasutajalood) on leitavad käesoleva töö Lisas 3. 
 
-MVP funktisonaalsuse kliendi kasutajalood on toodud Joonis \ref{fig:client_userstories}. Ülejäänud kasutajalood (sh administraatori kasutajalood) on leitavad käesoleva töö Lisas 3. 
+Protsessi visualiseerimiseks on valitud Miro interaktiivne keskkond. Miro on mugav ning väiksema projekti puhul tasuta tööriist, mis võimaldab visualiseerida erinevaid protsesse
+interaktiivse märkmetahvli peal.
+
 \begin{figure}[ht]
     \centering
     \includegraphics[width=1\textwidth]{figures/analysis/client_userstories0.png}

@@ -29,24 +29,35 @@ ehitusfüüsikat meeles hoidma ka hoone haldamisega tegelevad inimesed.
 \section{Probleemi olemus}
 \label{chapters:problem_statement}
 Ehitusvaldkonna oluline puudus on madal digitaliseerimise tase \cite{digitalization_index} ja konservatiivsus üldiselt. See puudutab ka ehitusfüüsika valdkonda. 
-Viimastel aastatel on  arendatud palju professionaalseid tarkvarasid projekteerimise ja ehitusjuhtimise tarbeks, kuid  käesoleva töö 
+Viimasel aastakümnel on  arendatud palju professionaalseid tarkvarasid projekteerimise ja ehitusjuhtimise tarbeks, kuid  käesoleva töö 
 peatükis \ref{chapter:problem_statement} läbiviidud analüüsist järeldub, et ehitusfüüsika valdkonnas digitaalsete lahenduste arendamine oli tagasihoidlik. 
 Euroopa turul on olemas mõned üksikud lahendused (toodud peatükis \ref{chapter:problem_statement}), mis on üsna keerulised -- sellise tarkvara sihtgrupp on teadusvaldkond.
-Ehitusinseneride töö on tavaliselt ajaliselt piiratud, mistõttu keerulise kasutajaliidesega ja tööpõhimõttega tarkvara kasutamine ei ole alati sobiv variant. 
-Lisaks, puudub tarkvara, mis oleks kohalikule turule adapteeritud -- eestikeelne kasutajaliides, kliiamaandmed.
+Ehitusinseneride töö on tavaliselt ajaliselt piiratud, mistõttu keerulise kasutajaliidesega ja tööpõhimõttega tarkvara kasutamine ei ole alati sobilik variant. 
+Lisaks, puudub tarkvara, mis oleks kohalikule turule adapteeritud (eestikeelse kasutajaliidese ja kliiamaandmete olemasolu).
 
-Käesoleva töö eesmärk on välja töötada platvormi, mis sisaldaks erinevaid tööriistu, millega oleks võimalik lahendada ehitusfüüsika valdkonna ülesandeid mugavalt 
-ja operatiivselt ehitusinseneridele piisaval tasemel ning tuginedes aktuaalsetele andmetele. See võiks parandada olukorda, kus ehitusfüüsika probleemidega tegelemine
-jääb erinevatel etappidel tegemata tarkvara puudumise või tarkvara kasutamiseks ebapiisavate oskuste tõttu. 
-See oleks abivahendiks ehitusinseneridele, mis ei vaja sügavat valdkonna tundmist, et teostada piisavas mahus arvutusi 
-tagamaks ehitusprojekti või ehituse kvaliteeti ehitusfüüsika seisukohalt. 
+Käesoleva töö eesmärk on välja töötada platvormi, mis sisaldaks erinevaid tööriistu, millega oleks võimalik operatiivselt lahendada ehitusfüüsika valdkonna ülesandeid
+tuginedes aktuaalsetele andmetele ning tagades tulemuste mahu ja kvaliteeti ehitusinseneridele piisaval tasemel. 
+Sellega võiks mõjutada positiivses suunas olukorda, kus ehitusfüüsika probleemidega tegelemine jääb erinevatel etappidel tegemata tarkvara puudumise või tarkvara kasutamiseks ebapiisavate oskuste tõttu. 
+Kavandatav platvorm oleks ehitusinseneridele abivahendiks, mis ei vaja sügavat valdkonna tundmist, et teostada piisavas mahus arvutusi 
+tagamaks ehitusprojekti või ehitise kvaliteeti ehitusfüüsika seisukohalt. 
 
 Ehitusfüüsika valdkond on lai ning lahendusi on tarvis leida paljudele probleemidele -- detailsem soojusjuhtivuse arvutus erinevatele hoone sõlmedele,
 energiamärgise või ventilatsiooni- ja õhuvahetusega seotud arvutused, ja ka palju muud. Käesoleva töö raames on mahu piiramise mõttes mõistlik
-keskenduda ühe konkreetse probleemi lahendamisele ja töötada välja selleks tööriist. Lahendatavaks probleemiks võiks olla konstruktsiooni
-niiskustehnilise toimivuse kalkulaator, millega saaks lihtsamal viisil hinnata kondensaadi tekkimise riski konstruktsiooni kihtides.
+keskenduda ühe konkreetse probleemi lahendamisele ja töötada välja selleks tööriist. Lahendatavaks probleemiks on valitud konstruktsiooni
+niiskustehnilise toimivuse kalkulaator, millega saaks lihtsamal viisil hinnata kondensaadi tekkimise riski piirdekonstruktsiooni kihtides.
 Tegemist on ehitusinseneridele vajaliku tööriistaga, mille arendamine võiks samuti olla infotehnoloogia valdkonna seisukohalt
 huvitavaks väljakutseks.
 
 Püstitatud probleemi lahenduse lähteülesanne suures osas toetub autori teadmistele ja kogemustele ehituse valdkonnas. Töö autor omab magistrikraadi
-tööstus- ja tsiviilehituse erialal ning on rohkem kui 10 aastat töötanud ehitusvaldkonnas erinevates ametites, seetõttu aimab sihtgrupi vajadustest. 
+tööstus- ja tsiviilehituse erialal ning on rohkem kui 10 aastat töötanud ehitusvaldkonnas erinevates ametites, seetõttu aimab sihtgrupi vajadustest.
+
+\section{Töö sisu}
+Töö koosneb kaheksast peatükist. Käesolevas sissejuhatuse peatükis \ref{chapters:introduction} tuuakse üldine teave valitud valdkonnast, valiku 
+põhjendused ning konkretiseeritakse ülesande püstitust. Metoodika peatükis \ref{chapters:metodology} kirjeldatakse püstitatud probleemile lahenduse leidmiseks
+vajalikud sammud. Peatükis \ref{chapters:problem_statement} uuritakse sissejuhatuse peatükis \ref{chapters:introduction} püstitatud probleemi detailsemalt, 
+selgitades välja nõutud lahenduse sisu ja eksisteerivaid lahendusi. Kavandatava lahenduse analüüsi peatükis \ref{chapters:analysis} tuuakse välja nõuded 
+infosüsteemile, valitakse tehnoloogiaid erinevate infosüsteemi osade realiseerimiseks ning koostatakse kasutajaliidese disaini projekt. Infosüsteemi arendamise
+peatükis \ref{chapter:development} kirjeldatakse infosüsteemi osade realiseerimise põhilised aspektid ning testimise peatükist \ref{chapters:testing} räägitakse
+infosüsteemi testimise põhimõtetest. Osas \ref{chapters:feedback} kavandatakse ja viiakse läbi infosüsteemi proovikasutamist sihtgrupi esindajate poolt ning 
+analüüsitakse tulemusi. Kokkuvõtte peatükis \ref{chapters:summary} antakse hinnangut läbiviidud tööle ning hinnangule tuginedes tehakse ettepanekuid infosüsteemi
+edasise arengu suunast ja strateegiast.
