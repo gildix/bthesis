@@ -1,51 +1,60 @@
 \section{Tehnoloogiate valik}
-Tehnoloogiate valimisel lähtutakse kaasaaegsetest veebirakendamise ehitamise printsiipidest, arvestatakse
-rakenduse loogika keerukust, võimalike kasutajate hulka, säilitavate andmete mahtusid ja infosüsteemi
-edasise arengu perspektiive. 
 
-Veebirakendusel peab olema selgelt eristatav serveriosa ja kasutajaliides. Vajadusel saab tulevikus 
-lisada ka teised kasutajaliidesed, mis töötavad sama serveriosaga (näiteks: mobiilrakendus).
-See tähendab, et infosüsteemi arhitektuur peab olema REST arhitektuurse stiili nõuete kohane. See eeldab
-ka seda, et andmevahetus kasutajaliidese ja serveriosa vahel peab toimuma HTTP päringutega kasutades 
-JSON (JavaScript Object Notation) formaati. JSON on JavaScript-i põhine andmevahetuse formaat, mis 
-representeerib JavaScript-i andmeobjektid teksti kujul, mida on võimalik saata HTTP 
-päringutega üle veebi\cite{about_rest}.
-Lisaks sellele on oluline, et kõik päringud on omavahel sõltumatud, see tähendab, et ühe 
-päringu raames serveriosas alustatakse ja lõpetatakse kõik päringuga seotud protsessid, päringute 
-vahel serveril puudub kliendiga seotud olek (\textit{stateless} protokoll)\cite{about_rest}.
+Tehnoloogiate valiku osas otsuste tegemisel lähtutakse peatükis \ref{chapters:analysis_requirements} toodud
+funktsionaalsetest ja mittefunktsionaalsetest nõuetest, kaasaaegsetest veebirakendamise ehitamise printsiipidest, 
+potentsiaalsest kasutajate hulgast ning edasise arengu perspektiivist.
+
+Veebirakendusele luuakse omavahelt sõltumatud serveriosa ja kasutajaliides. Serveriosa tegeleb päringute vastuvõtmise, 
+töötluse ja kasutajaliidesele vastuse saatmisega. Serveriosa salvestab ja loeb andmeid andmebaasist ning 
+teeb andmetele vajalikku töötlust enne kasutajaliidesele saatmist.
+
+Infosüsteemi ülesehitus peab olema REST arhitektuurse stiili kohane. REST stiil eeldab, et andmevahetus 
+kasutajaliidese ja serveriosa vahel toimub HTTP päringutega kasutades JSON (JavaScript Object Notation) formaati. 
+JSON on JavaScript-i põhine andmevahetuse formaat, mis representeerib JavaScript-i andmeobjektid teksti kujul.
+JSON andmeid saadetakse erineva tüübi HTTP päringutega kasutaja veebilehitsejalt 
+serveriosale ja tagasi. Samuti eeldab REST, et kõik päringud on omavahel sõltumatud -- ühe päringu raames serveriosas 
+alustatakse ja lõpetatakse kõik päringuga seotud protsessid ning päringute vahel serveril 
+puudub kasutajaliidesega seotud olek (\textit{stateless} protokoll)\cite{about_rest}\cite{rest_apis_book}.
 
 Selleks, et süsteem saaks võimalikult pikemat aega töötama ilma tehnoloogiate uuenduse vajaduseta,
 peab kasutusele võtma võimalikult uued, aga samas ka stabiilsed ja pikema toega lahenduste versioonid. 
 
-Allpool olevates alampeatükkides valitakse vastavate infosüsteemi osade realiseerimise tehnoloogiaid (keele ja raamistikke). 
-Igas alampeatükis on kirjeldatud võimalikud variandid ning toodud lühike võrdlus, millele tuginedes
-tehakse valiku otsust.
+Allpool olevates alampeatükkides \ref{analysis_interface_subsection} ja \ref{analysis_backend_subsection} valitakse 
+vastavate infosüsteemi osade realiseerimise tehnoloogiaid (keele ja raamistikke). Igas alampeatükis on 
+kirjeldatud potentsiaalselt sobilikud lahendused, toodud erinevate variantide võrdlus ning tehtud põhjendatud otsus.
 
 \subsection{Kasutajaliides}
 \label{analysis_interface_subsection}
-Kasutajaliides teostatakse üheleherakendusena (SPA). SPA tehnoloogia võimaldab minimeerida 
-andmevahetuse mahtusid: serverilt küsitakse ja vastavalt kliendile saadetakse ainult need andmed, 
-mida on hetkel tarvis. Arendatava infosüsteemi kontekstis see on oluline, sest kõiki arvutusi 
-teostatakse serveril ning kliendile saadetakse andmed, mis on vajalikud tulemuste näitamiseks 
-kasutajale. Iga uus tegevus kasutajaliideses, mis mõjutab tulemusi (uue kihi lisamine, 
-kihtide järjekorra muutmine, arvutuse parameetrite muutmine jms.), tähendab uut päringut serverile. 
-Samuti SPA tehnoloogia võimaldab muuta lehe sisu dünaamilisel viisil -- uuendatakse vaid lehe teatud
-komponent ilma kogu lehekülje ümberlaadimise vajaduseta \cite{about_spa}. See on ka oluline, kuna tulemuste esitamist 
-peab uuendama dünaamiliselt kohe peale arvutuse lähteandmete muutmist.
 
-Üheleherakenduste ehitamiseks kasutatakse JavaScript programmeerimiskeelt vfeebilehe dünaamilise 
-loogika juhtimiseks. Soovitavalt kasutada JavaScript keele laiendust -- TypeScript, mis muudab JavaScript-i 
-tugevalt ja staatiliselt tüübitud keeleks \cite{about_typescript}. Lehtede struktuuri ehitamiseks kasutatakse HTML (või raamistikust
-sõltuv laiendatud HTML-i süntaks). Kujundust teostatakse CSS stiilireeglitega ja lihtsustamise mõttes
-võetakse kasutusele ka vastavad teegid nt Bootstrap.
+Tulenevalt mittefunktsionaalsetest nõuetest, peab arvutusprogrammi veebilehe sisu muutma dünaamiliselt ilma
+lehe ümberlaadimiseta (kasutaja muudab arvutuse lähetandmeid ja kohe näeb tulemuste muutmist). Selle nõue 
+täitmiseks peab kasutajaliides olema realiseeritud üheleherakendusena (SPA). Lehe veebilehe avamisel saadetakse
+esimesele GET päringule vastusena kõik kasutajaliidese töötamiseks vajalik sisu, ning järgmised andmevahetused
+serveriosaga toimuvad JSON formaadis. See muuhulgas võimaldab minimeerida andmevahetuse mahtusid: 
+serverilt küsitakse ja vastavalt kasutajaliidesele saadetakse ainult need andmed, mida on hetkel tarvis. 
+Arendatava infosüsteemi kontekstis see on oluline, sest kõiki arvutusi teostatakse serveril ning kasutajaliidesele 
+saadetakse andmed, mis on vajalikud tulemuste näitamiseks kasutajale \cite{about_spa}. Iga uus tegevus kasutajaliideses, mis mõjutab tulemusi 
+(uue kihi lisamine, kihtide järjekorra muutmine, arvutuse parameetrite muutmine jm), tähendab uut päringut serverile.
 
-Kuigi on võimalik loogikat ellu viia kasutades puhta JavaScript koodi, tänapäeval seda tehakse
-harva. On olemas erinevad lahendused, mis oluliselt lihtsustavad rakenduse ehitamise protsessi, kuid 
-nõuavad ka spetsiifilisi teadmisi. Raamistiku kasutuselevõtt olulisel määral vähendab koodi kirjutamist,
-kuna raamistik ise haldab loogikat, mis on seotud näiteks \textit{Routing}-uga, turvalisusega, komponentide
-genereerimise ja uuendamisega. Spetsiifilise funktsionaalsuse jaoks kasutatakse eraldi pluginaid ja teeke. Näiteks
-päringute saatmise ja serveri vastuse töötluseks kasutatakse \textit{Axios} -- teek, mida saab kasutada 
-erinevate raamistikutega.
+Üheleherakenduste loomiseks kasutatakse JavaScript programmeerimiskeelt. JavaScript võimaldab juhtida ja dünaamiliselt muuta
+veebilehe komponente ja nende välimust. JavaScript on laialdaselt toetatud kõikide kaasaaegsete operatsioonisüsteemide ja
+veebilehitsejatega ning on piisavalt kiire, et luua kiiresti ja sujuvalt töötavad interaktiivsed veebilehed \cite{about_spa_js_book}  
+
+Infosüsteemi arendamiseks peab võtma kasutusele JavaScript keele laiendust -- TypeScript, mis muudab JavaScript-i 
+tugevalt ja staatiliselt tüübitud keeleks \cite{about_typescript}\cite{why_typescript_article}. TypeScript keele kasutamine
+muudab arenduse protsessi mugavamaks ja lõpliku lahenduse veakindlamaks. Enne veebirakenduse paigaldamist veebiserverile
+teostatakse TypeScript keeles kirjutatud koodi kompileerimist JavaScript koodisse.
+
+Veebilehtede struktuuri ehitamiseks kasutatakse hüperteksti märgistuskeelt HTML (või raamistikust sõltuv laiendatud HTML-i süntaks). 
+Kujundust teostatakse CSS stiilireeglitega ja lihtsustamise mõttes võetakse kasutusele ka vastavad teegid nt Bootstrap.
+
+Kuigi on võimalik planeeritavat veebirakenduse funktsionaalsust ellu viia kasutades ainult JavaScript koodi, tänapäeval seda tehakse
+harva. On olemas erinevad valmislahendused, mis oluliselt lihtsustavad rakenduse ehitamise protsessi, kuid 
+nõuavad ka spetsiifilisi teadmisi (ainult programmeerimiskeele teadmine ei ole piisav). Raamistiku kasutuselevõtuga olulisel määral vähendatakse 
+koodi kirjutamist, kuna raamistik ise haldab loogikat, mis on seotud näiteks marsruutimise (\textit{Routing}), komponentide
+genereerimise ja uuendamisega. Spetsiifilise funktsionaalsuse jaoks kasutatakse pluginaid ja teeke -- nt
+päringute saatmise ja serveri vastuse töötluseks kasutatakse teeki \textit{Axios}, mis on ühendatav paljude
+JavaScript keeles kirjutatud raamistikutega. \textbf{REVIEW STOPPED HERE 27.03.2024}
 
 Üheleherakenduse ehitamiseks kõige sobilikud JavaScript raamistikud on \textit{React}, \textit{Vue.js}
 ja \textit{Angular}. Kõikidel raamistikutel on oma eripärad alates projekti arhitektuurist kuni 
